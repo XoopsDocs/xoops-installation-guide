@@ -1,0 +1,4 @@
+installationguide
+=================
+
+XOOPS Installation Guide
