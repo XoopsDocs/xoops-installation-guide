@@ -1,4 +1,4 @@
-# Summary
+# Table of Content
 
 * [Introduction](README.md)
 * [Install/Uninstall](book/1install.md)
