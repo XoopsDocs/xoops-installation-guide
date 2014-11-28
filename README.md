@@ -16,4 +16,4 @@
   
   
   
-© 2014 The XOOPS Project (www.xoops.org)    
+© 2014 The XOOPS Project (http://xoops.org)    
