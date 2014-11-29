@@ -4,17 +4,13 @@
 
 0. Unpack the archive to your LOCAL computer (e.g. PC) in a temporary directory.
 1. Move the "upgrade" folder inside the "htdocs" folder (it's been kept out as it's not needed for full installs) on your local computer
-2. Delete htdocs/mainfile.php, htdocs/install/, htdocs/cache/, htdocs/template_c/, htdocs/themes/, htdocs/uploads/, and htdocs/modules/system from the "htdocs" folder on your LOCAL computer
-* if you have created XOOPS_TRUST_PATH folder on your server, copy the content of /xoops_lib to that directory, and delete /xoops_lib from the "htdocs" folder on your LOCAL computer
+2. Delete htdocs/mainfile.php, htdocs/install/, htdocs/cache/, htdocs/template_c/, htdocs/themes/, htdocs/uploads/, and htdocs/modules/system from the "htdocs" folder on your LOCAL computer<br><br> - if you have created XOOPS_TRUST_PATH folder on your server, copy the content of /xoops_lib to that directory, and delete /xoops_lib from the "htdocs" folder on your LOCAL computer<br><br>
 3. Upload the content of the /htdocs folder on your LOCAL computer over your existing files on your server
 4. For security considerations, you are encouraged to move directories xoops_lib (for XOOPS libraries) and xoops_data (for XOOPS data) out of Document Root, and change the folder names.
 5. Make the directory of xoops_data/ writable; Create and make the directories of xoops_data/caches/, xoops_data/caches/xoops_cache/, xoops_data/caches/smarty_cache/ and xoops_data/caches/smarty_compile/ writable.
 6. Ensure the server can write to mainfile.php
-7. If you have Protector previously installed, open the "mainfile.php" file , and remove the Pre-check and Post-check lines (if they exist):
-
-include XOOPS_TRUST_PATH.'/modules/protector/include/precheck.inc.php' ;
-include XOOPS_TRUST_PATH.'/modules/protector/include/postcheck.inc.php' ;
-
+7. If you have Protector previously installed, open the "mainfile.php" file , and remove the Pre-check and Post-check lines (if they exist):<br><br>include XOOPS_TRUST_PATH.'/modules/protector/include/precheck.inc.php' ;<br>
+include XOOPS_TRUST_PATH.'/modules/protector/include/postcheck.inc.php' ;<br><br>
 8. Access /upgrade/ with a browser, and follow the instructions
 9. Follow the instructions to update your database
 10. Write-protect mainfile.php again (permission 0444 on Linux)
