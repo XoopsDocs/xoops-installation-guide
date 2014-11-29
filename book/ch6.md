@@ -3,20 +3,27 @@
 
 With all of the information added, the Installation Wizard is ready to write all the information to the mainfile.php and the secure.php file. If the information provided about the database was correct, the result should be similar to Figure 11.
  
- 
-[image001.png](../assets/img_17.jpg)  
+![image001.png](../assets/img_17.jpg)  
+
 Figure 11: You have another chance to take a look at what you entered
 If all data is correct, push the [Next] button and the Installation Wizard will attempt to connect to the database server to confirm the MySQL database is active and running and then will try to connect to the database specified. 
+
 If the MySQL server is setup correctly, the Installation Wizard will try to access the database, in this case the one called “xoops250final”.  If it accessed the database successfully, the required tables for XOOPS.
 
  
+![image001.png](../assets/img_18.jpg) 
 
 Figure 12: Database table creation list
+
 Screen 8/14 (Figure 12) presents all of the database tables that support the System Module of a new XOOPS site. 
+
 A new XOOPS site creates 32 tables. Following is a list of the tables and a brief description of their function: 
-xef9_avatar - Holds the identity, path and name of user avatars. 
-xef9_avatar_user_link -Ties an avatar's id with a user's id, so each user “knows” its avatar.
-xef9_banner - Holds all the information about a specific banner.
+
+|Table|Description|
+|---|---|
+|xef9_avatar| Holds the identity, path and name of user avatars. |
+|xef9_avatar_user_link| Ties an avatar's id with a user's id, so each user “knows” its avatar.|
+|xef9_banner |Holds all the information about a specific banner.|
 xef9_bannerclient - Holds all the information about a banner customer. 
 xef9_bannerfinish - Holds all the information about expired banners, with their click count.
 xef9_block_module_link link -Ties a block's id with a module's id, so each block “knows” the module to which it belongs.
