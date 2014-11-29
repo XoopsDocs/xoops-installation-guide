@@ -1,4 +1,5 @@
-Appendix 3: Translating XOOPS to Local Language
+### Appendix 3: Translating XOOPS to Local Language
+
 
 If you're looking for a XOOPS 2.5.x translations into local languages, you will be able to download them most of the time from your local support sites.
 After release of each XOOPS version, you will be able to download some of them from the SourceForge Files area, in the "XOOPS Core Translations" section. There are two flavors:
