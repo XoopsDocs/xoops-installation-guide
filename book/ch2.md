@@ -19,26 +19,28 @@ To proceed successfully, the following is required on either a local machine or 
 
 With the hosting environment available, the following steps are recommended to prepare for the installation:
 
-1.	Download either the TAR file or ZIP file to a local machine and uncompress the archive (using, for example, 7Zip program – see “Useful Tools” Appendix) 
+1)	Download either the TAR file or ZIP file to a local machine and uncompress the archive (using, for example, 7Zip program – see “Useful Tools” Appendix) 
 
 The resulting new directory has four subdirectories: docs, extras, htdocs, and upgrade.
 
-![image001.png](assets/img_3.jpg)
+![image001.png](assets/img_2.jpg)
  
 -	The docs subdirectory includes the change log, GNU/GPL license, a credits file. 
 -	The upgrade subdirectory includes files needed for upgrade older versions of XOOPS.
 -	The extras subdirectory includes optional files to be used for specific configurations (read the *.txt files for explanations)
--	The htdocs subdirectory, contains all the code of your XOOPS site. 
-	
+-	The htdocs subdirectory, contains all the code of your XOOPS site. <br>
 
-2.	Copy the htdocs subdirectory to the root directory of your local or remote environment.  If the installation is on a local machine, this means copying the directory to a directory where the web server will look for files. For example if using  WAMP  (www.wampserver.com), the web root directory is called www. This will give you a file path of www/htdocs/ 
-3.	Once copied, rename the htdocs directory on the server to xoops. This means that the local site is accessed by typing “http://localhost/xoops" in a browser. 
+2) Copy the htdocs subdirectory to the root directory of your local or remote environment.  If the installation is on a local machine, this means copying the directory to a directory where the web server will look for files. For example if using  WAMP  (www.wampserver.com), the web root directory is called www. This will give you a file path of www/htdocs/ 
 
+3)	Once copied, rename the htdocs directory on the server to xoops. This means that the local site is accessed by typing “http://localhost/xoops" in a browser. 
+
+ ![image001.png](assets/img_3.jpg)
  
 When installing on a hosted, remote server, the htdocs directory must be uploaded to an accessible directory. Most remote servers have a public_html or htdocs folder.  That is the location where the contents of the XOOPS’ htdocs folder on the local computer must be uploaded. A FTP client software (see Appendix “Useful Tools”) is used for uploading files to you host. Once all of the files are uploaded to the root directory, you can access them via http://www.yoursite.com. 
 
- 	Caution 
-At this point it is important to note that only the content of the htdocs folder is uploaded to the root folder.  Otherwise, the installation will be located in http://www.yoursite.com/htdocs.
+|![image001.png](assets/img_4.jpg)| Caution: At this point it is important to note that only the content of the htdocs folder is uploaded to the root folder.  Otherwise, the installation will be located in http://www.yoursite.com/htdocs.|
+|-|-|
+
 
 
 4.	For local server: ensure that the server is running once a local installation has been completed.  This means to start the server application via the applicable control panel.  This is not a requirement for an installation on a remote server.
