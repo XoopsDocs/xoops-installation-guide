@@ -5,6 +5,7 @@ In screen 3/14, (Figure 4) the Installation Wizard checks the server configurati
 
  
 ![image001.png](../assets/img_10.jpg)  
+
 Figure 4: Server configuration check.
 
  
