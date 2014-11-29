@@ -7,3 +7,13 @@ If are not sure about any fields during the installation, you can click on the H
 
 For the time being, please accept the paths for Datafiles and Library directories. We will change them later. 
 
+ 
+
+Figure 6: By clicking on the Help icon, you will get detailed explanations
+If you make an error in the physical path, the Installation Wizard will display an error:
+
+ 
+
+Figure 7: The screen with an invalid URL in the physical path field.
+Once all paths are correct, click [Next]. 
+ 
