@@ -4,7 +4,7 @@ The next step is to start configuring the soon-to-exist XOOPS site.
 With the paths and folder permissions correct, it's time to give the wizard information about the database that we’ll be using. Screen 5/14 should look like Figure 8: 
 
  
-
+![image001.png](../assets/img_17.jpg)   
 Figure 8: Database connection details
 
 The first selector is for the moment a reminder that XOOPS looks into the future.  Currently, only MySQL databases can be used. No choice is required. 
