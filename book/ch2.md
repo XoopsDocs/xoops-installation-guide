@@ -9,20 +9,25 @@ If you require an installation in a language other than English, please skip now
 
 To proceed successfully, the following is required on either a local machine or hosted server:
 
-1.	a place to run that includes:
-    a.	the Apache web server; 
-    b.	the database manager MySQL;
-    c.	scripting language PHP, either on a Linux or a Windows platform; and
+1.	a place to run that includes:<br>
+
+    a.	the Apache web server; <br>
+    b.	the database manager MySQL;<br>
+    c.	scripting language PHP, either on a Linux or a Windows platform; and<br>
+
 2.	a downloaded copy of the latest XOOPS version (currently 2.5.0).
 
 With the hosting environment available, the following steps are recommended to prepare for the installation:
+
 1.	Download either the TAR file or ZIP file to a local machine and uncompress the archive (using, for example, 7Zip program – see “Useful Tools” Appendix) 
+
 The resulting new directory has four subdirectories: docs, extras, htdocs, and upgrade.
  
-•	The docs subdirectory includes the change log, GNU/GPL license, a credits file. 
-•	The upgrade subdirectory includes files needed for upgrade older versions of XOOPS.
-•	The extras subdirectory includes optional files to be used for specific configurations (read the *.txt files for explanations)
-•	The htdocs subdirectory, contains all the code of your XOOPS site. 
+-	The docs subdirectory includes the change log, GNU/GPL license, a credits file. 
+-	The upgrade subdirectory includes files needed for upgrade older versions of XOOPS.
+-	The extras subdirectory includes optional files to be used for specific configurations (read the *.txt files for explanations)
+-	The htdocs subdirectory, contains all the code of your XOOPS site. 
+	
 2.	Copy the htdocs subdirectory to the root directory of your local or remote environment.  If the installation is on a local machine, this means copying the directory to a directory where the web server will look for files. For example if using  WAMP  (www.wampserver.com), the web root directory is called www. This will give you a file path of www/htdocs/ 
 3.	Once copied, rename the htdocs directory on the server to xoops. This means that the local site is accessed by typing “http://localhost/xoops" in a browser. 
 
