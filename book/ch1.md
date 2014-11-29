@@ -1,4 +1,5 @@
-Chapter 1: Preamble 
+# Chapter 1: Preamble 
+
 
 Welcome to XOOPS Installation Guide. 
 Currently, this guide assists with the installation of a new XOOPS site provided the hosting environment is established. 
@@ -11,5 +12,5 @@ The XOOPS Documentation Team
 
  
 
-Figure 1: Installation Process
+**Figure 1: Installation Process**
 
