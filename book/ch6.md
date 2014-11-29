@@ -1,4 +1,5 @@
-Chapter 6: Final System Configuration 
+### Chapter 6: Final System Configuration 
+
 
 With all of the information added, the Installation Wizard is ready to write all the information to the mainfile.php and the secure.php file. If the information provided about the database was correct, the result should be similar to Figure 11.
  
