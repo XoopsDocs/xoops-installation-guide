@@ -51,7 +51,7 @@ Assuming that you have a structure in your existing XOOPS Installation as discus
 <br>8)	Test - Perform integration/regression testing on all modules 
 <br>a.	Review templates changes/updates for all modules and incorporate as appropriate
 
-> 	**Warning** 
+> **Warning** 
 
 > If you use any modules that utilize the “XOOPS_TRUST_PATH” and you have them installed on your Website, make sure that the content of it is being moved to your “xoops_lib” directory, and the current “XOOPS_TRUST_PATH”” is deleted, and if needed, the mainfile.php is modified accordingly. 
 
