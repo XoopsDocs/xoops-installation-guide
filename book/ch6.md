@@ -33,7 +33,7 @@ A new XOOPS site creates 32 tables. Following is a list of the tables and a brie
 |xef9_configoption | Holds configuration options.|
 |xef9_group_permission | Holds the details of permissions granted to each group of users.|
 |xef9_groups | Holds the identity of users' groups.|
-|xef9_groups_users_link| -Ties a user's id with a group's id, so each group "knows" its users, or each user "knows" to which group it belongs.
+|xef9_groups_users_link| Ties a user's id with a group's id, so each group "knows" its users, or each user "knows" to which group it belongs.
 |xef9_image | Holds all the information about an image stored in the system.|
 |xef9_imagebody |Holds an image, in case you decide to write images in the database.|
 |xef9_imagecategory | Holds the image categories you define in the Image Manager.
