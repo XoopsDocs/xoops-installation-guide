@@ -1,5 +1,7 @@
-Upgrading from XOOPS 2.0.* above 2.0.14 and 2.2.* 
+## Upgrading from XOOPS 2.0.* above 2.0.14 and 2.2.* 
+
 (using the full package)
+
 0. Unpack the archive to your LOCAL computer (e.g. PC) in a temporary directory.
 1. Move the "upgrade" folder inside the "htdocs" folder (it's been kept out as it's not needed for full installs) on your local computer
 2. Delete htdocs/mainfile.php, htdocs/install/, htdocs/cache/, htdocs/template_c/, htdocs/themes/, htdocs/uploads/, and htdocs/modules/system from the "htdocs" folder on your LOCAL computer
