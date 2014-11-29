@@ -6,5 +6,4 @@ Since there are some directory structure changes in both fckeditor and tinymce e
 
 And if you are using fckeditor for modules, please modify module specific configs following the files in /fckeditor/modules/, especially if you use "article" module.
 
-To increase Security of your XOOPS Installation: please make sure to read Appendix 5
-
+**To increase Security of your XOOPS Installation: please make sure to read Appendix 5 **
