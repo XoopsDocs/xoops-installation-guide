@@ -1,4 +1,5 @@
-Chapter 5: Database Connections 
+### Chapter 5: Database Connections 
+
 The next step is to start configuring the soon-to-exist XOOPS site. 
 With the paths and folder permissions correct, it's time to give the wizard information about the database that we’ll be using. Screen 5/14 should look like Figure 8: 
 
