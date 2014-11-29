@@ -1,7 +1,7 @@
-Chapter 7: Administration Settings 
+### Chapter 7: Administration Settings 
+
 
 After the tables have been created, the Administrator account settings are entered.
- 
 
 Figure 13: This is the form where you create your site's webmaster.
 In the field called [Admin Login] the login name for the site SuperUser or Administrator should be entered. A common choice is, of course, webmaster, but any name can be used. 
