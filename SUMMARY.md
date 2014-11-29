@@ -16,9 +16,9 @@
 * [Upgrading XoopsEditor package](upg5.md)
 
 Appendixes	
-* [Appendix 1: Working with the new Admin GUI (our Dashboard)](ch1.md)
-* [Appendix 2:  Uploading XOOPS via FTP](ch1.md)
-* [Appendix 3: Translating XOOPS to Local Language](ch1.md)
-* [Appendix 4: Useful Tools](ch1.md)
-* [Appendix 5: Increase security of your XOOPS installation](ch1.md)
+* [Appendix 1: Working with the new Admin GUI (our Dashboard)](appendix1.md)
+* [Appendix 2:  Uploading XOOPS via FTP](appendix2.md)
+* [Appendix 3: Translating XOOPS to Local Language](appendix3.md)
+* [Appendix 4: Useful Tools](appendix4.md)
+* [Appendix 5: Increase security of your XOOPS installation](appendix5.md)
 
