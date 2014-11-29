@@ -1,5 +1,7 @@
-Appendixes
-Appendix 1: Working with the new Admin GUI (our Dashboard)
+# Appendixes
+
+### Appendix 1: Working with the new Admin GUI (our Dashboard)
+
 
 XOOPS 2.5 has as a default a new Admin GUI – the “Oxygen”, developed by Voltan (Hossien Azizabadi), and which is based on EXM created by Bit3CR0 (Eduardo Cortés).
 
@@ -8,29 +10,31 @@ XOOPS 2.5 has as a default a new Admin GUI – the “Oxygen”, developed by Vo
 Figure 25: Oxygen - XOOPS Admin screen theme
 
 Our new Dashboard is a major move forward toward improved ease of use for XOOPS users, with nice GUI and clear pull-down menus, as well with System Information and helpful Tabs.
+
 1) On the very top you see a Toolbar (1) with several buttons:
  
 that provide a direct access to the System Options:
 
-•	  Avatars
-•	  Banners 
-•	  Blocks 
-•	  Comments 
-•	  Groups 
-•	  Image Manager
-•	  Mail Users
-•	  Maintenance
-•	  Modules
-•	  Preferences
-•	  Smilies
-•	  Templates
-•	  User Ranks
-•	  Users
-•	  Help
+-	  Avatars
+-	  Banners 
+-	  Blocks 
+-	  Comments 
+-	  Groups 
+-	  Image Manager
+-	  Mail Users
+-	  Maintenance
+-	  Modules
+-	  Preferences
+-	  Smilies
+-	  Templates
+-	  User Ranks
+-	  Users
+-	  Help
 
 2) The System Options are also visible in the Pane (2) 
 
 3) The “Installed Modules” Pane (3) shows images of the currently installed modules
+
 4) In the “System Overview” Pane (4),  you can check your current System values (like PHP and Apache versions, and most important configuration values, as well as more info about XOOPS, and links to our Gift shop, in case you would like to purchase a T-Shirt or coffee mug with XOOPS Logo.
 
   
@@ -64,9 +68,9 @@ Figure 29: Control Panel Menu items
 In the Control Panel Menu you have following choices:
 
 
-Menu Item	Description
-Home Page	It will get you to your Homepage
-XOOPS News	It will pull latest XOOPS news from www.xoops.org 
+- Menu Item	Description
+- Home Page	It will get you to your Homepage
+- XOOPS News	It will pull latest XOOPS news from www.xoops.org 
 
 
 Logout	It will log you out from your website
@@ -90,9 +94,9 @@ The Preferences Menu shows preferences for XOOPS as well as individual modules t
 Figure 32: Links Menu items
 The Links Menu provides you with links to useful sites:
 
-•	XOOPS Website
-•	XOOPS modules repository
-•	XOOPS Themes gallery
-•	XOOPS Project location on SourceForge
+-	XOOPS Website
+-	XOOPS modules repository
+-	XOOPS Themes gallery
+-	XOOPS Project location on SourceForge
 
  
