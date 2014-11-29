@@ -84,8 +84,9 @@ All this needs to be done before the installation, so when the wizard reads the 
 7)	Click [Next] to open the next screen (Figure 3) with introductory content. It includes a description of XOOPS, the license terms, environment requirements and requirements for the installation. 
 
  
- ![image001.png](,,/assets/img_9.jpg)  
+ ![img_9.jpg)](,,/assets/img_9.jpg)    
 Figure 3: XOOPS Installation Assistant
+
 
 The XOOPS Installation Assistant outlines key elements of the environment required for successful installation.  More detailed explanations of the eight points are:
 1.	“Setup WWW server, PHP and database server properly.” 
