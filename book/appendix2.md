@@ -1,4 +1,5 @@
-Appendix 2:  Uploading XOOPS via FTP
+### Appendix 2:  Uploading XOOPS via FTP
+
 
 This tutorial will show how to set up XOOPS for an installation on a Website hosted by Hostgator. 
 Prepare your host 
@@ -10,8 +11,8 @@ The changes you must have done now is just one of the things other hosts do not 
 Type the following: 
 
 Quote:
-Username: your username 
-Domainname: your domain name 
+Username: your username <br>
+Domainname: your domain name <br>
 Please create a custom. Htaccess and PHP.ini file for my web, and turn the 'register_globals' and' allow_url_fopen 'off. 
 
 It tends to be no problem. 
