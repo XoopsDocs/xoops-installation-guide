@@ -1,4 +1,4 @@
-# Chapter 1: Preamble 
+## Chapter 1: Preamble 
 
 
 Welcome to XOOPS Installation Guide. 
