@@ -1,4 +1,4 @@
-# Chapter 2: Introduction 
+## Chapter 2: Introduction 
 
 
 The XOOPS Installation Guide provides an overview of how install XOOPS on your Web server. it is assumed users already have a working environment that is either **LAMP** or** WAMP**. 
