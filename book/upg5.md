@@ -1,4 +1,4 @@
-# Upgrading XoopsEditor package:
+## Upgrading XoopsEditor package:
 
 In the XOOPS package, there are eight editors included: dhtmltextarea and textarea for plain text, fckeditor, tinymce, koivi, wymeditor, Xinha, and Spaw2 for WYSIWYG HTML.
 
