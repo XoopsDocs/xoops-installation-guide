@@ -1,13 +1,18 @@
-Chapter 2: Introduction 
+# Chapter 2: Introduction 
 
-The XOOPS Installation Guide provides an overview of how install XOOPS on your Web server. it is assumed users already have a working environment that is either LAMP or WAMP. 
+
+The XOOPS Installation Guide provides an overview of how install XOOPS on your Web server. it is assumed users already have a working environment that is either **LAMP** or** WAMP**. 
+
 Efforts have been made to ensure this is not merely a sequential installation document. Useful tips and pointers about XOOPS are provided as the user is guided successfully through the installation process. 
+
 If you require an installation in a language other than English, please skip now to step 6 and review the translation information and instructions to ensure you have what you need before starting the installation.
+
 To proceed successfully, the following is required on either a local machine or hosted server:
+
 1.	a place to run that includes:
-a.	the Apache web server; 
-b.	the database manager MySQL;
-c.	scripting language PHP, either on a Linux or a Windows platform; and
+    a.	the Apache web server; 
+    b.	the database manager MySQL;
+    c.	scripting language PHP, either on a Linux or a Windows platform; and
 2.	a downloaded copy of the latest XOOPS version (currently 2.5.0).
 
 With the hosting environment available, the following steps are recommended to prepare for the installation:
