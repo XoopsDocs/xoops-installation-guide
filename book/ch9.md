@@ -12,7 +12,7 @@ b.	Delete unneeded Files/Folders from /htdocs
 i.	Delete cache, install, and templates_c folders 
 ii.	Delete mainfile.php, favicon.ico (typically, but leave if you didn’t modify it)
 
- 
+![image001.png](../assets/img_41.jpg)
 
 c.	Copy upgrade folder into /htdocs 
 d.	If you have installed AltSys Module: 
@@ -27,6 +27,9 @@ c.	Merge images, languages, uploads folders
 d.	Merge WYSIWYG editor changes 
 4.	Delete /modules/system from existing site
 5.	Copy/Move Files (over existing site)  
+6.	
+![image001.png](../assets/img_44.jpg)
+
 6.	Perform Upgrade
 a.	Remove files from cache and templates_c folders (keep the index.html files) 
 b.	Make mainfile.php writeable
