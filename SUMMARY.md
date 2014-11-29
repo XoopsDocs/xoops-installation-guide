@@ -1,14 +1,3 @@
-### _XOOPS Documentation Series_
-![logoXoops.jpg](assets/logoXoops.jpg)
-
-# XOOPS Installation Guide
-#### for XOOPS 2.5.7
-  
-## User Manual
-
-  
-© 2014 The XOOPS Project (http://xoops.org)    
-
 # Table of Content
 
 * [Chapter 1: Preamble](book/ch1.md)
@@ -34,3 +23,4 @@ Appendixes
 * [Appendix 3: Translating XOOPS to Local Language](book/appendix3.md)
 * [Appendix 4: Useful Tools](book/appendix4.md)
 * [Appendix 5: Increase security of your XOOPS installation](book/appendix5.md)
+
