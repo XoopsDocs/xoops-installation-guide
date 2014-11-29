@@ -25,7 +25,7 @@ Figure 9: Error displayed if a connection to the MySQL server is not made
 If there are problems with connection to the database, XOOPS will return the error in Figure 9 – make sure the settings are correct. 
 
  
-![image001.png](../assets/img_1jpg)  
+![image001.png](../assets/img_16.jpg)  
 
 Figure 10: Database Configuration
 
