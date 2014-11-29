@@ -12,7 +12,7 @@ We welcome your comments, reviews, opinions and in general whatever feedback you
 ***The XOOPS Documentation Team***
 
 
-![image001.png](assets/img_1.jpg)
+![image001.png](../assets/img_1.jpg) 
  
 
 Figure 1: Installation Process
