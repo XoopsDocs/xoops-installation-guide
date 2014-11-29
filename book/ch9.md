@@ -1,23 +1,25 @@
-Chapter 9: Upgrade Existing XOOPS Installation
+### Chapter 9: Upgrade Existing XOOPS Installation
 
- 	Warning 
-If you use custom templates, you should convert them into files inside your theme folder before upgrading. 
+
+>	**Warning **
+
+>If you use custom templates, you should convert them into files inside your theme folder before upgrading. 
 
 Assuming that you have a structure in your existing XOOPS Installation as discussed above, and would like to upgrade it to XOOPS 2.5.2, i.e. you have renamed and moved your xoops_lib and xoops_data directories outside of Document Root, these are the steps to upgrade your XOOPS Installation:
 
-1.	Backup all XOOPS files & your XOOPS database!!! 
-2.	Pre-Upgrade Instructions: 
-a.	Unzip the downloaded “XOOPS Release” into a temporary folder 
-b.	Delete unneeded Files/Folders from /htdocs 
-i.	Delete cache, install, and templates_c folders 
-ii.	Delete mainfile.php, favicon.ico (typically, but leave if you didn’t modify it)
+1)	Backup all XOOPS files & your XOOPS database!!! 
+2)	Pre-Upgrade Instructions: 
+<br>a.	Unzip the downloaded “XOOPS Release” into a temporary folder 
+<br>b.	Delete unneeded Files/Folders from /htdocs 
+<br>i.	Delete cache, install, and templates_c folders 
+<br>ii.	Delete mainfile.php, favicon.ico (typically, but leave if you didn’t modify it)
 
 ![image001.png](../assets/img_41.jpg)
 
-c.	Copy upgrade folder into /htdocs 
-d.	If you have installed AltSys Module: 
-i.	Copy altsys folder in current XOOPS_TRUST folder to xoops_lib/modules folder 
-ii.	In xoops_lib folder, make symlink of libs -> modules (for altsys compatibility) 
+<br>c.	Copy upgrade folder into /htdocs 
+<br>d.	If you have installed AltSys Module: 
+<br>i.	Copy altsys folder in current XOOPS_TRUST folder to xoops_lib/modules folder 
+<br>ii.	In xoops_lib folder, make symlink of libs -> modules (for altsys compatibility) 
 3.	Merge Core/Module Modifications (if in core release) 
 a.	Merge any core files modified for your installations 
 i.	robots.txt (only if changed)
