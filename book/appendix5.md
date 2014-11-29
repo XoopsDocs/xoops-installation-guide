@@ -1,5 +1,8 @@
-Appendix 5: Increase security of your XOOPS installation
+### Appendix 5: Increase security of your XOOPS installation
+
+
 After you’ve installed XOOPS, you can increase its security by following few simple steps.
+
 1) First, go to the Protector. When there, you might see some warnings. 
 'register_globals' and' allow_url_fopen 'you have already asked hostgator to change, so it will change when they have had hold of your ticket. 
 
