@@ -1,24 +1,24 @@
 # Table of Content
 
 * [Chapter 1: Preamble](ch1.md)
-* [Chapter 2: Introduction	6
-* [Chapter 3: Server Configuration Check	11
-* [Chapter 4: Take the Right Path!	12
-* [Chapter 5: Database Connections	14
-* [Chapter 6: Final System Configuration	17
-* [Chapter 7: Administration Settings	20
-* [Chapter 8: Ready to go!	27
-* [Chapter 9: Upgrade Existing XOOPS Installation	32
-* [Upgrading from XOOPS 2.4.5 (easy way)	34
-* [Upgrading from XOOPS 2.0.* above 2.0.14 and 2.2.*	35
-* [Upgrading from any XOOPS (2.0.7 to 2.0.13.2)	35
-* [Upgrading a non UTF-8 site:	36
-* [Upgrading XoopsEditor package:	36
+* [Chapter 2: Introduction](ch1.md)
+* [Chapter 3: Server Configuration Check](ch1.md)
+* [Chapter 4: Take the Right Path!](ch1.md)
+* [Chapter 5: Database Connections](ch1.md)
+* [Chapter 6: Final System Configuration](ch1.md)
+* [Chapter 7: Administration Settings](ch1.md)
+* [Chapter 8: Ready to go!](ch1.md)
+* [Chapter 9: Upgrade Existing XOOPS Installation](ch1.md)
+* [Upgrading from XOOPS 2.4.5 (easy way)](upg1.md)
+* [Upgrading from XOOPS 2.0.* above 2.0.14 and 2.2.*](upg2.md)
+* [Upgrading from any XOOPS (2.0.7 to 2.0.13.2)](upg3.md)
+* [Upgrading a non UTF-8 site](upg4.md)
+* [Upgrading XoopsEditor package](upg5.md)
 
 Appendixes	
-* [Appendix 1: Working with the new Admin GUI (our Dashboard)	37
-* [Appendix 2:  Uploading XOOPS via FTP	44
-* [Appendix 3: Translating XOOPS to Local Language	51
-* [Appendix 4: Useful Tools	53
-* [Appendix 5: Increase security of your XOOPS installation	55
+* [Appendix 1: Working with the new Admin GUI (our Dashboard)](ch1.md)
+* [Appendix 2:  Uploading XOOPS via FTP](ch1.md)
+* [Appendix 3: Translating XOOPS to Local Language](ch1.md)
+* [Appendix 4: Useful Tools](ch1.md)
+* [Appendix 5: Increase security of your XOOPS installation](ch1.md)
 
