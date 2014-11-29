@@ -9,6 +9,8 @@
 * [Chapter 7: Administration Settings](book/ch7.md)
 * [Chapter 8: Ready to go!](book/ch8.md)
 * [Chapter 9: Upgrade Existing XOOPS Installation](book/ch9.md)
+ 
+Upgrades	
 * [Upgrading from XOOPS 2.4.5 (easy way)](book/upg1.md)
 * [Upgrading from XOOPS 2.0.* above 2.0.14 and 2.2.*](book/upg2.md)
 * [Upgrading from any XOOPS (2.0.7 to 2.0.13.2)](book/upg3.md)
