@@ -11,8 +11,29 @@ Figure 25: Oxygen - XOOPS Admin screen theme
 Our new Dashboard is a major move forward toward improved ease of use for XOOPS users, with nice GUI and clear pull-down menus, as well with System Information and helpful Tabs.
 
 1) On the very top you see a Toolbar (1) with several buttons:
+
+![image001.png](../assets/img_47.jpg)  
  
 that provide a direct access to the System Options:
+
+|Icon|Function|
+|---|---|
+|![img_5.jpg](../assets/avatar.png) |Avatars|
+|![img_6.jpg](../assets/banners.png) |Banners |
+|![img_6.jpg](../assets/blocks.png) |Blocks|
+|![img_6.jpg](../assets/comments.png) |Comments|
+|![img_6.jpg](../assets/groups.png) |Groups|
+|![img_6.jpg](../assets/images.png) |Image Manager|
+|![img_6.jpg](../assets/mailuser.png) |Mail Users|
+|![img_6.jpg](../assets/maintenance.png) |Maintenance|
+|![img_6.jpg](../assets/modules.png) |Modules|
+|![img_6.jpg](../assets/prefs.png) |Preferences|
+|![img_6.jpg](../assets/smilies.png) |Smilies|
+|![img_6.jpg](../assets/tpls.png) |Templates|
+|![img_6.jpg](../assets/userrank.png) |User Ranks|
+|![img_6.jpg](../assets/edituser.png) |Users|
+|![img_6.jpg](../assets/help.png) |Help|
+
 
 -	  Avatars
 -	  Banners 
@@ -37,7 +58,7 @@ that provide a direct access to the System Options:
 4) In the “System Overview” Pane (4),  you can check your current System values (like PHP and Apache versions, and most important configuration values, as well as more info about XOOPS, and links to our Gift shop, in case you would like to purchase a T-Shirt or coffee mug with XOOPS Logo.
 
   
-
+![image001.png](../assets/img_47.jpg)  
 Figure 26: Admin GUI showing system information
 5) New in 2.5.0 is the additional Pane with new extra Tabs:
  
