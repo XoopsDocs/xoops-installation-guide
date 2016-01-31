@@ -2,13 +2,20 @@
 ![logoXoops.jpg](assets/logoXoops.jpg)
 
 # XOOPS Installation Guide
-#### for XOOPS 2.5.7
+#### for XOOPS 2.5.7.x
   
 ## User Manual
 
 
   
-© 2014 The XOOPS Project (http://xoops.org)    
+© 2016 XOOPS Project (http://xoops.org)    
+
+
+## How to Contribute
+
+[You can contribute on GitHub](https://github.com/XoopsDocs/xoops-installation-guide). Changes will be [pushed to Gitbook.io automatically](https://www.gitbook.com/book/xoops/xoops-installation-guide/activity) when the [main repository](https://github.com/XoopsDocs/xoops-installation-guide) changes.
+
+Editing the book can be done either by updating the markdown files with a text editor, or opening the repository in [the Gitbook desktop app](https://github.com/GitbookIO/editor/blob/master/README.md). The desktop app will give you a live preview option.
 
 # Table of Content
 
@@ -35,3 +42,9 @@ Appendixes
 * [Appendix 3: Translating XOOPS to Local Language](book/appendix3.md)
 * [Appendix 4: Useful Tools](book/appendix4.md)
 * [Appendix 5: Increase security of your XOOPS installation](book/appendix5.md)
+
+##License:
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />Unless specified, this content is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+
+All derivative works are to be attributed to XOOPS Project ([www.xoops.org](http://xoops.org))
