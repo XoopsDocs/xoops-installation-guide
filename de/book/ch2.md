@@ -9,6 +9,7 @@ Die offizielle internationale englischsprachige Webseite [www.xoops.org](http://
 
 Die offizielle deutschsprachige Webseite [www.myxoops.org](http://myxoops.org)
 
+-------------------------------------
 
 The XOOPS Installation Guide provides an overview of how install XOOPS on your Web server. it is assumed users already have a working environment that is either **LAMP** or** WAMP**. 
 
