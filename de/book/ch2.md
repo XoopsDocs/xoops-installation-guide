@@ -1,6 +1,15 @@
 ## Chapter 2: Introduction 
 
 
+Willkommen bei XOOPS!
+
+XOOPS ist ein dynamisches OO (Objekt Orientiertes) open source Portal Script geschrieben in PHP. XOOPS ist ein ideales CMS (Content Management System) für den Aufbau von kleineren und grösseren Communities, Firmen-, Intra- und Internet-Portale, Web-Logs und vieles mehr.
+
+Die offizielle internationale englischsprachige Webseite [www.xoops.org](http://xoops.org)
+
+Die offizielle deutschsprachige Webseite [www.myxoops.org](http://myxoops.org)
+
+
 The XOOPS Installation Guide provides an overview of how install XOOPS on your Web server. it is assumed users already have a working environment that is either **LAMP** or** WAMP**. 
 
 Efforts have been made to ensure this is not merely a sequential installation document. Useful tips and pointers about XOOPS are provided as the user is guided successfully through the installation process. 
