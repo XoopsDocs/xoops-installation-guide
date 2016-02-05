@@ -1,10 +1,10 @@
 ### _XOOPS Documentation Series_
 ![logoXoops.jpg](assets/logoXoops.jpg)
 
-# XOOPS Installation Guide
+# XOOPS Installation
 #### for XOOPS 2.5.7.x
   
-## User Manual  (DEUTSCH)
+## Detaillierte Beschreibung wie man Xoops auf einem Server installiert
 
 
   
