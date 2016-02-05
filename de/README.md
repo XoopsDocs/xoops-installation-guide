@@ -4,7 +4,7 @@
 # XOOPS Installation Guide
 #### for XOOPS 2.5.7.x
   
-## User Manual
+## User Manual  (DEUTSCH)
 
 
   
