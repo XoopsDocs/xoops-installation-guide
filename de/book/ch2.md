@@ -5,7 +5,7 @@ Willkommen bei XOOPS!
 
 XOOPS ist ein dynamisches OO (Objekt Orientiertes) open source Portal Script geschrieben in PHP. XOOPS ist ein ideales CMS (Content Management System) für den Aufbau von kleineren und grösseren Communities, Firmen-, Intra- und Internet-Portale, Web-Logs und vieles mehr.
 
-Die offizielle internationale englischsprachige Webseite [www.xoops.org](http://xoops.org)
+Die offizielle internationale englischsprachige Webseite [www.xoops.org](https://xoops.org)
 
 Die offizielle deutschsprachige Webseite [www.myxoops.org](http://myxoops.org)
 
