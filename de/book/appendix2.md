@@ -42,9 +42,9 @@ Create a user with an optional name and let the system generates a password for 
 You must virtually never use this password, so why use one that is easy to crack?
 
 ![image001.png](../assets/img_61.jpg) 
-
-![image001.png](../assets/img_62.jpg) 
  
+![image001.png](../assets/img_62.jpg) 
+
 Scroll down and select "New Database" 
 
 Enter a name and choose 
@@ -61,8 +61,8 @@ Click
 Put notch in the All Privileges and click 
 
 ![image001.png](../assets/img_65.jpg)  
-
  
+
 **Upload **
 
 So we need to have uploaded Xoops. 
