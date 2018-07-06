@@ -1,12 +1,12 @@
 # Introduction
 
 ![logoXoops.jpg](.gitbook/assets/logoxoops.jpg)
-  
+
 ## XOOPS Installation Guide
 
 #### for XOOPS 2.5.7.x
   
-### User Manual
+© 2016 XOOPS Project (http://xoops.org)    
 
 © 2016 XOOPS Project \([http://xoops.org](http://xoops.org)\)
 
@@ -51,3 +51,4 @@ Unless specified, this content is licensed under a [Creative Commons Attribution
 
 All derivative works are to be attributed to XOOPS Project \([www.xoops.org](http://xoops.org)\)
 
+All derivative works are to be attributed to XOOPS Project ([www.xoops.org](http://xoops.org))
