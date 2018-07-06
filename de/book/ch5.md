@@ -4,7 +4,7 @@ The next step is to start configuring the soon-to-exist XOOPS site.
 With the paths and folder permissions correct, it's time to give the wizard information about the database that we’ll be using. Screen 5/14 should look like Figure 8: 
 
  
-![image001.png](../assets/img_14.jpg)   
+![](../assets/img_14.jpg)   
 
 Figure 8: Database connection details
 
@@ -19,13 +19,13 @@ For an installation in a remote environment, the database username and password 
 
 Next comes a Yes/No question about using persistent connections in the MySQL database. The default option is No, and it should be left as such except by advanced users.  For more information on this subject, refer to: "MySQL Newsletter Using persistent connections with MySQL". 
 
-![image001.png](../assets/img_15.jpg) 
+![](../assets/img_15.jpg) 
 
 Figure 9: Error displayed if a connection to the MySQL server is not made  
 If there are problems with connection to the database, XOOPS will return the error in Figure 9 – make sure the settings are correct. 
 
  
-![image001.png](../assets/img_16.jpg)  
+![](../assets/img_16.jpg)  
 
 Figure 10: Database Configuration
 

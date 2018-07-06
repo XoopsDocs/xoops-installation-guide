@@ -5,7 +5,7 @@
 
 XOOPS 2.5 has as a default a new Admin GUI – the “Oxygen”, developed by Voltan (Hossien Azizabadi), and which is based on EXM created by Bit3CR0 (Eduardo Cortés).
 
-![image001.png](../assets/img_52.jpg)
+![](../assets/img_52.jpg)
 Figure 25: Oxygen - XOOPS Admin screen theme
 
 Our new Dashboard is a major move forward toward improved ease of use for XOOPS users, with nice GUI and clear pull-down menus, as well with System Information and helpful Tabs.

@@ -12,7 +12,7 @@ b. Delete unneeded Files/Folders from /htdocs
 i. Delete cache, install, and templates\_c folders   
 ii. Delete mainfile.php, favicon.ico \(typically, but leave if you didn’t modify it\)
 
-![image001.png](.gitbook/assets/img_41.jpg)
+![](.gitbook/assets/img_41.jpg)
 
   
 c. Copy upgrade folder into /htdocs   
@@ -30,7 +30,7 @@ d. Merge WYSIWYG editor changes
 4\) Delete /modules/system from existing site   
 5\) Copy/Move Files \(over existing site\)
 
-![image001.png](.gitbook/assets/img_44.jpg)
+![](.gitbook/assets/img_44.jpg)
 
 6\) Perform Upgrade   
 a. Remove files from cache and templates\_c folders \(keep the index.html files\)   

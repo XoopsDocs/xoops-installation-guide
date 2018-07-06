@@ -10,7 +10,7 @@ We welcome your comments, reviews, opinions and in general whatever feedback you
 
 _**The XOOPS Documentation Team**_
 
-![image001.png](.gitbook/assets/img_1.jpg)
+![](.gitbook/assets/img_1.jpg)
 
 Figure 1: Installation Process
 

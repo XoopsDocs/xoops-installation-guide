@@ -2,25 +2,25 @@
 
 If everything has gone as planned, screen 14/14 will look like Figure 21.
 
-![image001.png](.gitbook/assets/img_28.jpg)
+![](.gitbook/assets/img_28.jpg)
 
 Figure 21: Final Installation screen
 
 The installation is complete. For security purposes XOOPS set the “mainfile.php” and the “secure.php” files as ReadOnly, and renamed the “Install” folder to a unique name. You should delete that folder. The \[Next\] button will close the Installation Wizard and open the homepage of the new site \(Figure 22\).
 
-![image001.png](.gitbook/assets/img_29.jpg)
+![](.gitbook/assets/img_29.jpg)
 
 Figure 22: XOOPS First Page
 
 Now you can login using the User Name and Password created during step 9/14 of the installation. If the password is accepted, this Welcome message will be displayed with whatever username was selected replacing “admin” In few seconds the website member area home page will be displayed as in Figure 23.
 
-![image001.png](.gitbook/assets/img_30.jpg)
+![](.gitbook/assets/img_30.jpg)
 
 Figure 23: Your brand new Website after logging in
 
 Note that the User Menu has appeared. To manage the Website, you will use the Administration area, that you can access via the Administration Menu link.
 
-![image001.png](.gitbook/assets/img_31.jpg)
+![](.gitbook/assets/img_31.jpg)
 
 Figure 24: Control Panel Home
 
@@ -44,11 +44,11 @@ The Document Root is a directory on you host's servers, below the “Server Root
 
 In our tutorial, let’s assume that the name of Document Root is “**www**”. Access the root folder of the site with your FTP software and find the directories xoops\_data and xoops\_lib. If possible, move these two directories up one level to the same level as the root folder and re-name them to obscure names. If re-locating the folders is not possible due to restrictions by the host, re-name both folders and note the new names. This change is for site security \(see **Appendix 4**\). The re-location and re-naming of the xoops\_lib and xoops\_data will ideally result in a structure like:
 
-![image001.png](.gitbook/assets/img_33.jpg)
+![](.gitbook/assets/img_33.jpg)
 
 > **Caution**  In some cases, your Host doesn’t allow to move any directories outside the Document Root. In such a case, we recommend change the Host. If this is not possible, you still should rename the the xoops\_lib and xoops\_data to a different name \(see below\).
 
-![image001.png](.gitbook/assets/img_35.jpg)
+![](.gitbook/assets/img_35.jpg)
 
 > **Info** 
 >
@@ -56,7 +56,7 @@ In our tutorial, let’s assume that the name of Document Root is “**www**”.
 
 If access at the same level as public\_html is not possible, the structure will be similar to:
 
-![image001.png](.gitbook/assets/img_37.jpg)
+![](.gitbook/assets/img_37.jpg)
 
 Once done, you have to update the secure.php located in /xoops\_data/data/ to point to the correct physical paths for the directories:
 

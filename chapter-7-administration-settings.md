@@ -2,7 +2,7 @@
 
 After the tables have been created, the Administrator account settings are entered.
 
-![image001.png](.gitbook/assets/img_19.jpg)
+![](.gitbook/assets/img_19.jpg)
 
 Figure 13: This is the form where you create your site's webmaster.
 
@@ -14,13 +14,13 @@ The Password Generator will create a very strong password and its use is highly 
 
 It is important that the password be saved for future reference. “KeyPass” is a good tool that can be used to store it in a database \(see Appendix 4\)
 
-![image001.png](.gitbook/assets/img_20.jpg)
+![](.gitbook/assets/img_20.jpg)
 
 Figure 14: Copying the generated password to Administrator fields
 
 The Installation Wizard will confirm that the passwords match. Clicking \[Next\] will move the process forward to step 10/14 \(Figure 15\).
 
-![image001.png](.gitbook/assets/img_21.jpg)
+![](.gitbook/assets/img_21.jpg)
 
 Figure 15: Saving settings to the database tables and creating System Key
 
@@ -56,25 +56,25 @@ Also, 19 of 32 tables have received data. The following list provides an outline
 
 The next step is to configure the website, including the site name, Meta Tags, Meta Description, Author, and Copyright information.
 
-![image001.png](.gitbook/assets/img_22.jpg)
+![](.gitbook/assets/img_22.jpg)
 
 Figure 16: Site configuration data entry
 
 The information entered in step 11/14 will have an impact on the site’s SEO score. Information can be found here: [http://en.wikipedia.org/wiki/Meta\_element](http://en.wikipedia.org/wiki/Meta_element). It is not necessary to make all decisions at this step as the information can be edited later via the site administration area.
 
-![image001.png](.gitbook/assets/img_23.jpg)
+![](.gitbook/assets/img_23.jpg)
 
 Figure 17: Theme Selection screen
 
 The next step is to select the website theme. The Installation Wizard provides three themes that can be changed later. Hundreds themes are available for XOOPS – see the XOOPS Theme Gallery: [http://www.xoops.org/modules/extgallery/](http://www.xoops.org/modules/extgallery/) . We select the Zetagenesis theme. The next step is to install the modules provided with XOOPS:
 
-![image001.png](.gitbook/assets/img_24.jpg)
+![](.gitbook/assets/img_24.jpg)
 
 Figure 18: Module selection screen
 
 Installation of the three modules included with the core package is recommended. They provide both useful functionality and security.
 
-![image001.png](.gitbook/assets/img_25.jpg)
+![](.gitbook/assets/img_25.jpg)
 
 Figure 19: All modules are selected to install
 
@@ -82,7 +82,7 @@ Figure 19: All modules are selected to install
 
 Once the modules are selected, click on \[Next\] to install them. Each module will provide feedback to confirm proper installation \(Figure 20\).
 
-![image001.png](.gitbook/assets/img_27.jpg)
+![](.gitbook/assets/img_27.jpg)
 
 Figure 20: Module Installation feedback
 

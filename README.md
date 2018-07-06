@@ -6,9 +6,9 @@
 
 #### for XOOPS 2.5.7.x
   
-© 2016 XOOPS Project (https://xoops.org)    
+© 2018 XOOPS Project (https://xoops.org)    
 
-© 2016 XOOPS Project \([https://xoops.org](https://xoops.org)\)
+© 2018 XOOPS Project \([https://xoops.org](https://xoops.org)\)
 
 ### How to Contribute
 

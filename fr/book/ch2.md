@@ -23,7 +23,7 @@ With the hosting environment available, the following steps are recommended to p
 
 The resulting new directory has four subdirectories: docs, extras, htdocs, and upgrade.
 
-![image001.png](../assets/img_2.jpg)
+![](../assets/img_2.jpg)
  
 -	The docs subdirectory includes the change log, GNU/GPL license, a credits file. 
 -	The upgrade subdirectory includes files needed for upgrade older versions of XOOPS.
@@ -34,7 +34,7 @@ The resulting new directory has four subdirectories: docs, extras, htdocs, and u
 
 3)	Once copied, rename the htdocs directory on the server to xoops. This means that the local site is accessed by typing “http://localhost/xoops" in a browser. 
 
- ![image001.png](../assets/img_3.jpg)
+ ![](../assets/img_3.jpg)
  
 When installing on a hosted, remote server, the htdocs directory must be uploaded to an accessible directory. Most remote servers have a public_html or htdocs folder.  That is the location where the contents of the XOOPS’ htdocs folder on the local computer must be uploaded. A FTP client software (see Appendix “Useful Tools”) is used for uploading files to you host. Once all of the files are uploaded to the root directory, you can access them via http://www.yoursite.com. 
 
@@ -62,7 +62,7 @@ If you want to install several website on the same server, copy XOOPS files into
 
 <br>The wizard opens a page in the browser with the following content: 
 
- ![image001.png](../assets/img_6.jpg)  
+ ![](../assets/img_6.jpg)  
 Figure 2: Language selection page of the XOOPS installation wizard<br>
 
 > **Resources **

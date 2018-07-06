@@ -1,5 +1,5 @@
 ### _XOOPS Documentation Series_
-![logoXoops.jpg](assets/logoXoops.jpg)
+![](assets/logoXoops.jpg)
 
 # XOOPS Installation Guide
 #### for XOOPS 2.5.7.x
@@ -8,7 +8,7 @@
 
 
   
-© 2016 XOOPS Project (https://xoops.org)    
+© 2018 XOOPS Project (https://xoops.org)    
 
 
 ## How to Contribute
@@ -43,7 +43,7 @@ Appendixes
 * [Appendix 4: Useful Tools](book/appendix4.md)
 * [Appendix 5: Increase security of your XOOPS installation](book/appendix5.md)
 
-##License:
+## License:
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />Unless specified, this content is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
 
