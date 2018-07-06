@@ -14,7 +14,7 @@ Assuming that you have a structure in your existing XOOPS Installation as discus
 <br>i.	Delete cache, install, and templates_c folders 
 <br>ii.	Delete mainfile.php, favicon.ico (typically, but leave if you didn’t modify it)
 
-![image001.png](../assets/img_41.jpg)
+![](../assets/img_41.jpg)
 
 <br>c.	Copy upgrade folder into /htdocs 
 <br>d.	If you have installed AltSys Module: 
@@ -30,7 +30,7 @@ Assuming that you have a structure in your existing XOOPS Installation as discus
 <br>4)	Delete /modules/system from existing site
 <br>5) Copy/Move Files (over existing site)  
 	
-![image001.png](../assets/img_44.jpg)
+![](../assets/img_44.jpg)
 
 6)	Perform Upgrade
 <br>a.	Remove files from cache and templates_c folders (keep the index.html files) 

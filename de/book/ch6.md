@@ -3,7 +3,7 @@
 
 With all of the information added, the Installation Wizard is ready to write all the information to the mainfile.php and the secure.php file. If the information provided about the database was correct, the result should be similar to Figure 11.
  
-![image001.png](../assets/img_17.jpg)  
+![](../assets/img_17.jpg)  
 
 Figure 11: You have another chance to take a look at what you entered
 If all data is correct, push the [Next] button and the Installation Wizard will attempt to connect to the database server to confirm the MySQL database is active and running and then will try to connect to the database specified. 
@@ -11,7 +11,7 @@ If all data is correct, push the [Next] button and the Installation Wizard will 
 If the MySQL server is setup correctly, the Installation Wizard will try to access the database, in this case the one called “xoops250final”.  If it accessed the database successfully, the required tables for XOOPS.
 
  
-![image001.png](../assets/img_18.jpg) 
+![](../assets/img_18.jpg) 
 
 Figure 12: Database table creation list
 
