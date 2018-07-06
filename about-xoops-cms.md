@@ -26,7 +26,11 @@ The standard pronunciation of XOOPS follows English rules, and is pronounced \[z
 
 **Database-driven**
 
-XOOPS uses a relational database \(currently MySQL\) to store data required for running a web-based content management system. Fully Modularized Modules can be installed, uninstalled, and activated or deactivated with a click using the XOOPS module administration system.
+XOOPS uses a relational database \(currently MySQL\) to store data required for running a web-based content management system. 
+
+**Fully Modularized **
+
+Modules can be installed, uninstalled, and activated or deactivated with a click using the XOOPS module administration system.
 
 **Personalization**
 
