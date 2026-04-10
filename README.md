@@ -4,11 +4,11 @@
 
 ## XOOPS Installation Guide
 
-#### for XOOPS 2.5.7.x
-  
-© 2018 XOOPS Project (https://xoops.org)    
+#### for XOOPS 2.7.0
 
-© 2018 XOOPS Project \([https://xoops.org](https://xoops.org)\)
+© 2026 XOOPS Project ([https://xoops.org](https://xoops.org))
+
+Download the current release from [XoopsCore27 Releases on GitHub](https://github.com/XOOPS/XoopsCore27/releases).
 
 ### How to Contribute
 
@@ -27,28 +27,28 @@ Editing the book can be done either by updating the markdown files with a text e
 * [Chapter 7: Administration Settings](chapter-7-administration-settings.md)
 * [Chapter 8: Ready to go!](chapter-8-ready-to-go.md)
 * [Chapter 9: Upgrade Existing XOOPS Installation](chapter-9-upgrade-existing-xoops-installation.md)
- 
-Upgrades	
 
-* [Upgrading from XOOPS 2.4.5 \(easy way\)](upgrading-from-xoops-2.4.5-easy-way.md)
-* [Upgrading from XOOPS 2.0. _above 2.0.14 and 2.2._](upgrading-from-xoops-2.0.-above-2.0.14-and-2.2..md)
-* [Upgrading from any XOOPS \(2.0.7 to 2.0.13.2\)](upgrading-from-any-xoops-2.0.7-to-2.0.13.2.md)
-* [Upgrading a non UTF-8 site](upgrading-a-non-utf-8-site.md)
-* [Upgrading XoopsEditor package](upgrading-xoopseditor-package.md)
+### Appendixes
 
-Appendixes	
-
-* [Appendix 1: Working with the new Admin GUI \(our Dashboard\)](appendix-1-working-with-the-new-admin-gui-our-dashboard.md)
-* [Appendix 2:  Uploading XOOPS via FTP](appendix-2-uploading-xoops-via-ftp.md)
+* [Appendix 1: Working with the XOOPS Admin GUI](appendix-1-working-with-the-new-admin-gui-our-dashboard.md)
+* [Appendix 2: Uploading XOOPS via FTP](appendix-2-uploading-xoops-via-ftp.md)
 * [Appendix 3: Translating XOOPS to Local Language](appendix-3-translating-xoops-to-local-language.md)
 * [Appendix 4: Useful Tools](appendix-4-useful-tools.md)
 * [Appendix 5: Increase security of your XOOPS installation](appendix-5-increase-security-of-your-xoops-installation.md)
 
-### License:
+### Historical Upgrade Notes
 
-[![Creative Commons License](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-nc-sa/4.0/)  
+The pages below describe legacy upgrade paths that pre-date XOOPS 2.7.0. For any upgrade to 2.7.0, follow [Chapter 9](chapter-9-upgrade-existing-xoops-installation.md).
+
+* [Upgrading from XOOPS 2.4.5 (easy way)](upgrading-from-xoops-2.4.5-easy-way.md)
+* [Upgrading from XOOPS 2.0.x (above 2.0.14) and 2.2.x](upgrading-from-xoops-2.0.-above-2.0.14-and-2.2..md)
+* [Upgrading from any XOOPS (2.0.7 to 2.0.13.2)](upgrading-from-any-xoops-2.0.7-to-2.0.13.2.md)
+* [Upgrading a non UTF-8 site](upgrading-a-non-utf-8-site.md)
+* [Upgrading XoopsEditor package](upgrading-xoopseditor-package.md)
+
+### License
+
+[![Creative Commons License](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-nc-sa/4.0/)
 Unless specified, this content is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
 
-All derivative works are to be attributed to XOOPS Project \([www.xoops.org](https://xoops.org)\)
-
-All derivative works are to be attributed to XOOPS Project ([www.xoops.org](https://xoops.org))
+All derivative works are to be attributed to XOOPS Project ([www.xoops.org](https://xoops.org)).

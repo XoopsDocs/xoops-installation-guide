@@ -1,86 +1,61 @@
-# Appendix 1: Working with the new Admin GUI \(our Dashboard\)
+# Appendix 1: Working with the XOOPS Admin GUI
 
-## Appendix 1: Working with the new Admin GUI \(our Dashboard\)
-
-XOOPS 2.5 has as a default a new Admin GUI – the “Oxygen”, developed by Voltan \(Hossien Azizabadi\), and which is based on EXM created by Bit3CR0 \(Eduardo Cortés\).
+XOOPS 2.7.0 ships four admin themes that can be switched from the user profile. The 2.5.x "Oxygen" admin theme has been retired.
 
 ![](.gitbook/assets/img_46.jpg)
 
-Our new Dashboard is a major move forward toward improved ease of use for XOOPS users, with nice GUI and clear pull-down menus, as well with System Information and helpful Tabs.
+## Admin themes
 
-1\) On the very top you see a Toolbar \(1\) with several buttons:
+| Theme        | Description                                                                                         |
+| ------------ | --------------------------------------------------------------------------------------------------- |
+| `default`    | The standard admin theme, updated for 2.7.0 with Bootstrap 5 and Font Awesome 6.                    |
+| `dark`       | Dark-mode variant of the default admin theme.                                                       |
+| `modern`     | **New in 2.7.0.** A refreshed layout that is the recommended default for most administrators.      |
+| `transition` | An intermediate theme that preserves some 2.5.x admin look-and-feel for users migrating gradually. |
 
-![](.gitbook/assets/img_47.jpg)
+Users can pick their preferred admin theme from their profile; the default for new sites is the `default` admin theme.
 
-that provide a direct access to the System Options:
+## Template overload
 
-| Icon | Function |
-| --- | --- |
-| ![img\_5.jpg](.gitbook/assets/avatar.png) | Avatars |
-| ![img\_6.jpg](.gitbook/assets/banners.png) | Banners |
-| ![img\_6.jpg](.gitbook/assets/blocks.png) | Blocks |
-| ![img\_6.jpg](.gitbook/assets/comments%20%281%29.png) | Comments |
-| ![img\_6.jpg](.gitbook/assets/groups.png) | Groups |
-| ![img\_6.jpg](.gitbook/assets/images.png) | Image Manager |
-| ![img\_6.jpg](.gitbook/assets/mailuser.png) | Mail Users |
-| ![img\_6.jpg](.gitbook/assets/maintenance.png) | Maintenance |
-| ![img\_6.jpg](.gitbook/assets/modules.png) | Modules |
-| ![img\_6.jpg](.gitbook/assets/prefs.png) | Preferences |
-| ![img\_6.jpg](.gitbook/assets/smilies.png) | Smilies |
-| ![img\_6.jpg](.gitbook/assets/tpls.png) | Templates |
-| ![img\_6.jpg](.gitbook/assets/userrank.png) | User Ranks |
-| ![img\_6.jpg](.gitbook/assets/edituser.png) | Users |
-| ![img\_6.jpg](.gitbook/assets/help%20%281%29.png) | Help |
+A change in 2.7.0 is that system admin themes now support **template overload**. This means you can override a specific admin template in your own admin theme without touching the core files, and the core theme will continue to provide every template you have not overridden. This makes it much easier to brand the admin area or patch a single screen without forking an entire theme.
 
-2\) The System Options are also visible in the Pane \(2\)
+## Dashboard layout
 
-3\) The “Installed Modules” Pane \(3\) shows images of the currently installed modules
+The admin dashboard contains the familiar XOOPS sections:
 
-4\) In the “System Overview” Pane \(4\), you can check your current System values \(like PHP and Apache versions, and most important configuration values, as well as more info about XOOPS, and links to our Gift shop, in case you would like to purchase a T-Shirt or coffee mug with XOOPS Logo.
+- **Toolbar** at the top — quick access to System operations (Avatars, Banners, Blocks, Comments, Groups, Image Manager, Mail Users, Maintenance, Modules, Preferences, Smilies, Templates, User Ranks, Users, Help).
 
-![](.gitbook/assets/img_51.jpg)
+  ![](.gitbook/assets/img_47.jpg)
 
-![](.gitbook/assets/img_52.jpg)
+- **System panel** — the System Options are also accessible through a dedicated panel.
+- **Installed Modules panel** — shows icons for the currently installed modules. Modules can now also carry their own sidebar/menu icons; see the 2.7.0 release notes for the `menu icons for modules` feature.
+- **System Overview panel** — current system values (PHP and server versions, major configuration values), plus an **Admin Composer packages info** view (new in 2.7.0) that lists installed Composer libraries and their versions.
 
-The new Tabs provide extra information for the Administrator:
+  ![](.gitbook/assets/img_51.jpg)
 
-| Icon | Function |
-| --- | --- |
-| ![img\_5.jpg](.gitbook/assets/help.png) | Help |
-| ![img\_6.jpg](.gitbook/assets/waiting.png) | Waiting Content |
-| ![img\_6.jpg](.gitbook/assets/edituser%20%281%29.png) | New Members |
-| ![img\_6.jpg](.gitbook/assets/newuser.png) | Top Posters |
-| ![img\_6.jpg](.gitbook/assets/comments.png) | Recent Comments |
+## Control Panel menu
 
-XOOPS 2.5.0 provides couple of “skins” that you can change for a different look of the default theme, with currently available: Dark and Silver:
+The Control Panel menu offers:
 
-![](.gitbook/assets/img_54.jpg)
-
-Of course, you will be able to create your own skins, if desired.
-
-![](.gitbook/assets/img_55.jpg)
-
-In the **Control Panel Menu** you have following choices:
-
-| Menu Item | Description |
-| --- | --- |
-| Home Page | It will get you to your Homepage |
-| XOOPS News | It will pull latest XOOPS news from www.xoops.org |
-
-Logout It will log you out from your website
+| Menu Item   | Description                                   |
+| ----------- | --------------------------------------------- |
+| Home Page   | Go to the site home page.                     |
+| XOOPS News  | Pulls the latest XOOPS news from xoops.org.   |
+| Logout      | Log out of the administrator session.         |
 
 ![](.gitbook/assets/img_56.jpg)
 
-The Modules Menu will show all installed modules, and in a submenu for each of them – their individual options.
+The **Modules menu** lists every installed module with a submenu for each module's admin options.
 
 ![](.gitbook/assets/img_57.jpg)
 
-The **Preferences Menu** shows preferences for XOOPS as well as individual modules that you have installed on your system.
+The **Preferences menu** shows preferences for XOOPS itself plus preferences per installed module.
 
 ![](.gitbook/assets/img_58.jpg)
 
-* XOOPS Website
-* XOOPS modules repository
-* XOOPS Themes gallery
-* XOOPS Project location on SourceForge
+## Useful links
 
+- [XOOPS main website](https://xoops.org)
+- [XOOPS modules repository](https://github.com/XoopsModules25x)
+- [XOOPS themes gallery](https://github.com/XoopsThemes)
+- [XoopsCore27 on GitHub](https://github.com/XOOPS/XoopsCore27)

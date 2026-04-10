@@ -1,4 +1,9 @@
-# Upgrading from XOOPS 2.4.5 \(easy way\)
+# Upgrading from XOOPS 2.4.5 (easy way)
+
+> **Historical reference**
+>
+> This page describes a legacy upgrade path that pre-dates XOOPS 2.7.0. It is preserved for users who are still on a very old version and need to step through intermediate releases. **For upgrading any 2.5.x site to XOOPS 2.7.0, see [Chapter 9](chapter-9-upgrade-existing-xoops-installation.md) instead.**
+
 
 1. Get the right update package from the sourceforge file repository
 2. Delete the /modules/system directory

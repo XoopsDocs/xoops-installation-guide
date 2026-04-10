@@ -10,15 +10,22 @@
 * [Chapter 7: Administration Settings](chapter-7-administration-settings.md)
 * [Chapter 8: Ready to go!](chapter-8-ready-to-go.md)
 * [Chapter 9: Upgrade Existing XOOPS Installation](chapter-9-upgrade-existing-xoops-installation.md)
-* [Upgrading from XOOPS 2.4.5 \(easy way\)](upgrading-from-xoops-2.4.5-easy-way.md)
-* [Upgrading from XOOPS 2.0. above 2.0.14 and 2.2.](upgrading-from-xoops-2.0.-above-2.0.14-and-2.2..md)
-* [Upgrading from any XOOPS \(2.0.7 to 2.0.13.2\)](upgrading-from-any-xoops-2.0.7-to-2.0.13.2.md)
-* [Upgrading a non UTF-8 site](upgrading-a-non-utf-8-site.md)
-* [Upgrading XoopsEditor package](upgrading-xoopseditor-package.md)
-* [Appendix 1: Working with the new Admin GUI \(our Dashboard\)](appendix-1-working-with-the-new-admin-gui-our-dashboard.md)
-* [Appendix 2:  Uploading XOOPS via FTP](appendix-2-uploading-xoops-via-ftp.md)
+
+## Appendixes
+
+* [Appendix 1: Working with the XOOPS Admin GUI](appendix-1-working-with-the-new-admin-gui-our-dashboard.md)
+* [Appendix 2: Uploading XOOPS via FTP](appendix-2-uploading-xoops-via-ftp.md)
 * [Appendix 3: Translating XOOPS to Local Language](appendix-3-translating-xoops-to-local-language.md)
 * [Appendix 4: Useful Tools](appendix-4-useful-tools.md)
 * [Appendix 5: Increase security of your XOOPS installation](appendix-5-increase-security-of-your-xoops-installation.md)
 * [About XOOPS CMS](about-xoops-cms.md)
 
+## Historical Upgrade Notes
+
+> The pages in this section describe legacy upgrade paths that pre-date XOOPS 2.7.0. Use [Chapter 9](chapter-9-upgrade-existing-xoops-installation.md) for any upgrade to 2.7.0.
+
+* [Upgrading from XOOPS 2.4.5 (easy way)](upgrading-from-xoops-2.4.5-easy-way.md)
+* [Upgrading from XOOPS 2.0.x (above 2.0.14) and 2.2.x](upgrading-from-xoops-2.0.-above-2.0.14-and-2.2..md)
+* [Upgrading from any XOOPS (2.0.7 to 2.0.13.2)](upgrading-from-any-xoops-2.0.7-to-2.0.13.2.md)
+* [Upgrading a non UTF-8 site](upgrading-a-non-utf-8-site.md)
+* [Upgrading XoopsEditor package](upgrading-xoopseditor-package.md)

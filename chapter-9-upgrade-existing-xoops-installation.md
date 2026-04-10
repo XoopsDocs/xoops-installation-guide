@@ -1,59 +1,75 @@
-# Chapter 9: Upgrade Existing XOOPS Installation
+# Chapter 9: Upgrade an existing XOOPS installation to 2.7.0
 
-> **Warning** 
->
-> If you use custom templates, you should convert them into files inside your theme folder before upgrading.
-
-Assuming that you have a structure in your existing XOOPS Installation as discussed above, and would like to upgrade it to XOOPS 2.5.2, i.e. you have renamed and moved your xoops\_lib and xoops\_data directories outside of Document Root, these are the steps to upgrade your XOOPS Installation:
-
-1\) Backup all XOOPS files & your XOOPS database!!! 2\) Pre-Upgrade Instructions:   
-a. Unzip the downloaded “XOOPS Release” into a temporary folder   
-b. Delete unneeded Files/Folders from /htdocs   
-i. Delete cache, install, and templates\_c folders   
-ii. Delete mainfile.php, favicon.ico \(typically, but leave if you didn’t modify it\)
-
-![](.gitbook/assets/img_41.jpg)
-
-  
-c. Copy upgrade folder into /htdocs   
-d. If you have installed AltSys Module:   
-i. Copy altsys folder in current XOOPS\_TRUST folder to xoops\_lib/modules folder   
-ii. In xoops\_lib folder, make symlink of libs -&gt; modules \(for altsys compatibility\)   
-  
-3\) Merge Core/Module Modifications \(if in core release\)   
-a. Merge any core files modified for your installations   
-i. robots.txt \(only if changed\)   
-b. Merge Frameworks   
-i. Essentially, start with the latest Frameworks 1.22 \(and/or merged with 1.35 if used\), then add/overwrite files with Frameworks for XOOPS 2.5.0, then add/overwrite files with the XOOPS 2.5.x core files.   
-c. Merge images, languages, uploads folders   
-d. Merge WYSIWYG editor changes   
-4\) Delete /modules/system from existing site   
-5\) Copy/Move Files \(over existing site\)
-
-![](.gitbook/assets/img_44.jpg)
-
-6\) Perform Upgrade   
-a. Remove files from cache and templates\_c folders \(keep the index.html files\)   
-b. Make mainfile.php writeable   
-c. Run upgrade script \([http://yoursite.com/upgrade](http://yoursite.com/upgrade)\)   
-i. Point to xoops\_data and xoops\_lib directories   
-d. Update system, protector, and other core modules if installed   
-e. Delete upgrade folder   
-f. Update non-core modules individually \(make sure using the latest versions\)   
-7\) Post-Upgrade File Restructuring   
-a. Move new xoops\_lib and xoops\_data folders into XOOPS\_TRUST directory; remove the old, unneeded files and folders   
-b. Delete and redirect cache and templates\_c folders via symbolic link   
-c. Update mainfile.php to reflect the above changes   
-d. Make mainfile.php unwriteable \(chmod 444\)   
-e. Make Module Specific Changes   
-f. Remove old, unneeded files   
-g. Update FCKeditor module-specific configurations in all modules \(if any\)   
-8\) Test - Perform integration/regression testing on all modules   
-a. Review templates changes/updates for all modules and incorporate as appropriate
+XOOPS 2.7.0 introduces **Smarty 4**, a new admin theme set, modernized libraries, and PHP 8.2+ baseline code. The upgrade process from 2.5.x has been redesigned to support this safely.
 
 > **Warning**
 >
-> If you use any modules that utilize the “XOOPS\_TRUST\_PATH” and you have them installed on your Website, make sure that the content of it is being moved to your “xoops\_lib” directory, and the current “XOOPS\_TRUST\_PATH”” is deleted, and if needed, the mainfile.php is modified accordingly.
+> If you use custom themes or custom module templates, move them into theme folders (not the database) before upgrading so that the preflight scanner can analyze them.
 
-XOOPS can post only to one “XOOPS\_TRUST\_PATH”” directory, which in XOOPS 2.5.x is the xoops\_lib directory
+## 1. Back up
 
+Make a full backup of both the XOOPS files *and* the XOOPS database before making any changes. Do not skip this — the upgrade touches templates, database schema, and configuration files.
+
+## 2. Prepare the site for the upgrade
+
+1. Enable debugging in **System Options → Preferences → General Settings** (optional but helpful).
+2. Turn the site off in **System Options → Preferences → General Settings** so that visitors do not hit the site mid-upgrade.
+
+## 3. Copy the distribution over the site
+
+From the XOOPS 2.7.0 distribution:
+
+1. Copy the contents of `htdocs/` over your live web root.
+2. Copy the contents of `htdocs/xoops_lib/` into the directory you are using as `XOOPS_PATH` (renamed/relocated or not).
+3. Copy the contents of `htdocs/xoops_data/` into the directory you are using as `XOOPS_VAR_PATH`. Existing customized config files in `xoops_data/configs/` will **not** be overwritten by the installer.
+4. Copy the distribution `upgrade/` directory into your web root.
+
+## 4. Run the Smarty 4 preflight (required)
+
+XOOPS 2.7.0 replaces Smarty 2/3 with Smarty 4. Old templates may use syntax that Smarty 4 rejects. The `upgrade/preflight.php` script scans your themes and modules for such issues and can fix many of them automatically.
+
+1. Point your browser at `http://your-site/upgrade/preflight.php`.
+2. Log in as an administrator when prompted.
+3. Accept the defaults to scan `/themes/` and `/modules/` for `.tpl` and `.html` files, or narrow the scan with the provided form.
+4. Review the reported issues.
+5. Optionally check the **run fix** box and re-submit the form to apply automatic repairs.
+6. Repeat the scan until no issues remain. Manual edits may still be needed for templates with non-trivial Smarty syntax.
+7. When the scanner shows zero issues, click the **End scan** button. This marks the preflight as complete and lets you proceed to the upgrade itself.
+
+Do not skip this step. The regular upgrade flow will refuse to run until `preflight.php` has been completed at least once.
+
+## 5. Run the upgrade
+
+1. Point your browser at `http://your-site/upgrade/` and follow the prompts.
+2. Log in as an administrator.
+3. Step through any needed updates. The 2.7.0 upgrade path handles:
+   - creating the new `tokens` table used by the CSRF/form-token layer;
+   - widening `bannerclient.passwd` to accommodate modern password hashes;
+   - adding session cookie preference settings;
+   - removing obsolete bundled directories;
+   - other schema adjustments required by the 2.7.0 core.
+
+## 6. Update modules
+
+1. Follow the link at the end of the upgrade to update the **system** module.
+2. Update the **pm**, **profile**, and **protector** modules if installed.
+3. Update any third-party modules you have installed. Check each module's support page for a 2.7.0-compatible release before updating.
+
+## 7. Finish up
+
+1. Delete the `upgrade/` directory from your web root.
+2. Delete any remaining `install_cleanup_*.php` or renamed `install_remove_*` directories from earlier installs.
+3. Set `mainfile.php` to read-only again if your filesystem changed its permissions during the upgrade.
+4. Turn the site back on in **System Options → Preferences → General Settings**.
+
+Your XOOPS site should now be running on 2.7.0.
+
+## Troubleshooting
+
+- **Preflight reports many template issues.** Use the automatic repair option where possible, then manually fix the remaining ones. Compare with an untouched copy of a 2.7.0-compatible theme (for example `xswatch5`) to see what the expected Smarty 4 syntax looks like.
+- **Upgrade UI refuses to run.** Ensure you completed `preflight.php` and clicked **End scan**. The preflight state is tracked in the session.
+- **Site breaks after the upgrade.** Re-enable debugging temporarily, check the reported errors, and visit the XOOPS support forums at [https://xoops.org/modules/newbb/](https://xoops.org/modules/newbb/) if the cause is not obvious.
+
+## Upgrading from versions older than 2.5.x
+
+The upgrade path from 2.0.x / 2.2.x / 2.3.x / 2.4.x directly to 2.7.0 is not recommended. If you are on a version older than 2.5.x, upgrade to a late 2.5.x release first, then follow this chapter to move from 2.5.x to 2.7.0. See the legacy upgrade notes bundled with older XOOPS releases for the intermediate steps.

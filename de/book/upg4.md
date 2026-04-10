@@ -1,10 +1,9 @@
-## Upgrading a non UTF-8 site:
+# Aktualisieren einer Nicht-UTF-8-Site — Archiviert
 
-UTF-8 encoding has been introduced into XOOPS 2.3 as default charset. However, there might be some problems with converting existing websites from non UTF-8 charset to UTF-8.
-
-Before there is a good enough solution for this conversion, following settings are recommended when you upgrade an existing website if you are not an experienced user:
-
-- Select "Do not change" option in "Database character set and collation" step during upgrade process
-
-- Modify /languages/yourlanguage/global.php to use your previous _CHARSET value, if it has been changed to UTF-8 in your new global.php file as
-define('_CHARSET', 'UTF-8');
+> **⚠ Warnung — archivierter Inhalt**
+>
+> Diese Seite beschreibt eine historische Konvertierung von Nicht-UTF-8-XOOPS-Sites auf UTF-8 aus der 2.3.x-Ära. Sie wird **nicht** für XOOPS 2.7.0 gepflegt. XOOPS 2.7.0 verwendet `utf8mb4` als Standardzeichensatz; eine Site mit altem Zeichensatz muss zuerst auf UTF-8 migriert und anschließend über den regulären Pfad auf 2.7.0 aktualisiert werden.
+>
+> **Für ein Upgrade auf XOOPS 2.7.0 verwenden Sie [Kapitel 9](../../chapter-9-upgrade-existing-xoops-installation.md).**
+>
+> Der ursprüngliche Inhalt dieser Datei steht weiterhin in der Git-Historie zur Verfügung.

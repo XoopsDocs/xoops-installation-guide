@@ -1,59 +1,93 @@
-# Appendix 3: Translating XOOPS to Local Language
+# Appendix 3: Translating XOOPS to a Local Language
 
-If you're looking for a XOOPS 2.5.x translations into local languages, you will be able to download them most of the time from your **local support sites**.
+XOOPS 2.7.0 ships with English language files only. Translations into other languages are maintained by the community and distributed through GitHub and the various local XOOPS support sites.
 
-After release of each XOOPS version, you will be able to download some of them from the SourceForge Files area, in the "**XOOPS Core Translations**" section. There are two flavors:
+## Where to find existing translations
 
-1\) Full XOOPS 2.5.x Local Installations
+- **GitHub** — community translations are increasingly published as separate repositories under the [XOOPS organization](https://github.com/XOOPS) and on individual contributors' accounts. Search GitHub for `xoops-language-<your-language>` or browse the XOOPS organization for current packages.
+- **Local XOOPS support sites** — many regional XOOPS communities publish translations on their own sites. Visit [https://xoops.org](https://xoops.org) and follow the links to local communities.
+- **Module translations** — translations for individual community modules typically live next to the module itself in the `XoopsModules25x` GitHub organization (the `25x` in the name is historical; modules there are maintained for both XOOPS 2.5.x and 2.7.x).
 
-2\) XOOPS 2.5.x Language Files - you install first the **standard XOOPS**, and then copy the language files over your XOOPS files.
+If a translation for your language already exists, drop the language directories into your XOOPS install (see "How to install a translation" below).
 
-You can also check the **SVN Source Code for Language translations**
+## What needs to be translated
 
-If your language files are not available, you’ll need to translate the files yourself. All files that need to be translated, are located in directories called “/language/english”. There are several of them within XOOPS. As first, make a copy the folder and rename the new folder to your local language, e.g. /spanish. Then translate the English text within each file into your language.
+XOOPS 2.7.0 keeps language files next to the code that consumes them. A complete translation covers all of these locations:
 
-The easiest way to translate is to use [http://google.com/translate](http://google.com/translate) 1\) Open file to translate \(e.g. /language/english/comment.php\) 2\) The text to translate is included in the “define” lines, e.g.
+- **Core** — `htdocs/language/english/` — site-wide constants used by every page (login, common errors, dates, mail templates, etc.).
+- **Installer** — `htdocs/install/language/english/` — strings shown by the installation wizard. Translate these *before* running the installer if you want a localized install experience.
+- **System module** — `htdocs/modules/system/language/english/` — by far the largest set; covers the entire admin Control Panel.
+- **Bundled modules** — each of `htdocs/modules/pm/language/english/`, `htdocs/modules/profile/language/english/`, `htdocs/modules/protector/language/english/`, and `htdocs/modules/debugbar/language/english/`.
+- **Themes** — a handful of themes ship their own language files; check `htdocs/themes/<theme>/language/` if it exists.
 
-> define\('\_CM\_COMDELETED', 'Comment\(s\) deleted.'\);  
->  define\('\_CM\_COMDELETENG', 'Could not delete comment.'\);  
->  define\('\_CM\_DELETESELECT', 'Delete all its child comments?'\);
+A "core only" translation is the minimum useful unit and corresponds to the first two bullets above.
 
-3\) Copy these lines to the Translation window in [http://google.com/translate](http://google.com/translate) 4\) Select your local language and click “Translate”. If your local language is German, you would see something like:
+## How to translate
 
-> define\('\_CM\_COMDELETED', 'Comment \(s\) gelöscht.'\);  
->  define\('\_CM\_COMDELETENG', 'Konnte keine Kommentar löschen.'\);  
->  define\('\_CM\_DELETESELECT', 'Löschen Sie alle untergeordneten Kommentare?'\);
+1. Copy the `english/` directory next to it and rename the copy to your language. The directory name should be the lowercase English name of the language (`spanish`, `german`, `french`, `japanese`, `arabic`, etc.).
 
-5\) Replace the English text in the file with the translated text. Of course, the mechanical translation is not always correct, and you’ll need to review it before saving.
+   ```
+   htdocs/language/english/    →    htdocs/language/spanish/
+   ```
 
-But this should get you on the way. You can also use the "xTransam" module for it, but you would have to install XOOPS first, before using it.
+2. Open each `.php` file in the new directory and translate the **string values** inside the `define()` calls. Do **not** change the constant names — they are referenced from PHP code throughout the core.
 
-We'll need both ISO and UTF-8 translations. To have UTF-8 file, you can save the ISO file as UTF-8 file using notepad++, but make sure that you select in "Format" menu, the "Convert to UTF-8 without BOM" option.
+   ```php
+   // Before:
+   define('_CM_COMDELETED',  'Comment(s) deleted.');
+   define('_CM_COMDELETENG', 'Could not delete comment.');
+   define('_CM_DELETESELECT', 'Delete all its child comments?');
 
-Once you finalize your translation, please share it with other XOOPS users:
+   // After (Spanish):
+   define('_CM_COMDELETED',  'Comentario(s) eliminado(s).');
+   define('_CM_COMDELETENG', 'No se pudo eliminar el comentario.');
+   define('_CM_DELETESELECT', '¿Eliminar también todos sus comentarios secundarios?');
+   ```
 
-**Guidelines for Translation Submissions**
+3. **Save every file as UTF-8 *without* BOM.** XOOPS 2.7.0 uses `utf8mb4` end-to-end (database, sessions, output) and rejects files with a byte-order mark. In Notepad++ this is the **"UTF-8"** option, *not* "UTF-8-BOM". In VS Code it is the default; just confirm the encoding in the status bar.
 
-1. Package name: lang-2.5.0-&lt; language code &gt;.&lt; encoding &gt;.zip or .tar.gz
+4. Update the language and charset metadata at the top of each file to match your language:
 
-   The language code and character set encoding is the same as in global.php \(\_LANGCODE and \_CHARSET\).e.g. 
+   ```php
+   // _LANGCODE: es
+   // _CHARSET : UTF-8
+   // Translator: Your Name
+   ```
 
-> lang-2.5.0-pt\_BR.UTF-8.zip lang-2.5.0-da.ISO-8859-1.tar.gz
+   `_LANGCODE` should be the [ISO 639-1](https://www.loc.gov/standards/iso639-2/php/code_list.php) code for your language. `_CHARSET` is always `UTF-8` in XOOPS 2.7.0 — there is no longer an ISO-8859-1 variant.
 
-1. The translation package should only include _core language_ files, no system files or module language files except for the system module. Use the same language directory structure as the XOOPS core package. 
+5. Repeat for the installer, the System module, and any bundled modules you need.
 
-   e.g. 
+## How to install a translation
 
-> lang-2.5.0-da.ISO-8859-1/install/language/danish/\(files\).php   
->  /language/danish/\(files\).php   
->  /modules/system/language/danish/\(files\).php
+If you obtained a finished translation as a directory tree:
 
-Required information:
+1. Copy each `<language>/` directory into the matching `language/english/` parent in your XOOPS install. For example, copy `language/spanish/` into `htdocs/language/`, `install/language/spanish/` into `htdocs/install/language/`, and so on.
+2. Make sure file ownership and permissions are readable by the web server.
+3. Either select the new language at install time (the wizard scans `htdocs/language/` for available languages) or, on an existing site, change the language in **Admin → System → Preferences → General Settings**.
 
-* Name of language \(of course\)
-* Name of translator\(s\)/credits
-* URL link to translation package
-* \(optional\) support url - where people can post their comments about the translation
+## Sharing your translation back
 
-> **Note** 1. Languages requiring core changes for date/calendar formats can also include the changed core files in the package. 2. core change to include the language in the $language\_array variable of install/install.php is also ok.
+Please contribute your translation back to the community.
 
+1. Create a GitHub repository (or fork an existing language repository if one exists for your language).
+2. Use a clear name such as `xoops-language-<language-code>` (e.g. `xoops-language-es`, `xoops-language-pt-br`).
+3. Mirror the XOOPS directory structure inside your repository so files line up with where they get copied:
+
+   ```
+   xoops-language-es/
+   ├── language/spanish/(files).php
+   ├── install/language/spanish/(files).php
+   └── modules/system/language/spanish/(files).php
+   ```
+
+4. Include a `README.md` documenting:
+   - Language name and ISO code
+   - XOOPS version compatibility (e.g. `XOOPS 2.7.0+`)
+   - Translator and credits
+   - Whether the translation is core-only or covers bundled modules
+5. Open a pull request against the relevant module/core repository on GitHub or post an announcement on [https://xoops.org](https://xoops.org) so the community can find it.
+
+> **Note**
+>
+> If your language requires changes to the core for date or calendar formatting, include those changes in the package as well. Languages with right-to-left scripts (Arabic, Hebrew, Persian, Urdu) work out of the box in XOOPS 2.7.0 — RTL support was added in this release and individual themes pick it up automatically.

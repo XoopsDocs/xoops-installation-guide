@@ -1,74 +1,56 @@
-# Appendix 2:  Uploading XOOPS via FTP
+# Appendix 2: Uploading XOOPS via FTP
 
-This tutorial will show how to set up XOOPS for an installation on a Website hosted by Hostgator.
+This appendix walks through deploying XOOPS 2.7.0 to a remote host using FTP or SFTP. Any control panel (cPanel, Plesk, DirectAdmin, etc.) will expose the same underlying steps.
 
-**Prepare your host** 
+## 1. Prepare the database
 
-The first thing you must do is to create a case \(ticket\) in hostgator.
+Through your host's control panel:
 
-The changes you must have done now is just one of the things other hosts do not do - so it is a little expensive.
+1. Create a new MySQL database for XOOPS.
+2. Create a database user with a strong password.
+3. Grant the user full privileges on the newly created database.
+4. Record the database name, username, password, and host — you will enter them into the XOOPS installer.
 
-Type the following:
+> **Tip**
+>
+> Modern control panels generate strong passwords for you. Since the application stores the password in `xoops_data/data/secure.php`, you do not need to type it often — prefer a long, randomly generated value.
 
-Quote:
+## 2. Create an administrator mailbox
 
-> Username: **your username**   
->  Domainname: **your domain name**   
->  Please create a custom .htaccess and PHP.ini file for my web, and turn the 'register\_globals' and' allow\_url\_fopen 'off.
+Create an email mailbox that will receive site administration notifications. The XOOPS installer asks for this address during the webmaster account setup and validates it with `FILTER_VALIDATE_EMAIL`.
 
-It tends to be no problem.
+## 3. Upload the files
 
-Now you can then log into your Cpanel, which the administration since the states.
+XOOPS 2.7.0 ships with its third-party dependencies pre-installed in `xoops_lib/vendor/` (Composer packages, Smarty 4, HTMLPurifier, PHPMailer, Monolog, TCPDF, and more). This makes `xoops_lib/` significantly larger than in 2.5.x — expect tens of megabytes.
 
-The first time you log in, you see the following picture. You can always return to this by clicking on "Home" in the upper left corner.
+**Do not selectively skip files inside `xoops_lib/vendor/`.** Skipping files in the Composer vendor tree will break autoloading and the install will fail.
 
-![](.gitbook/assets/img_59.jpg)
+Upload structure (assuming `public_html` is the document root):
 
-We start with creating a mail to the Webmaster. Click on the icon "email accounts"
+1. Upload `xoops_data/` and `xoops_lib/` **next to** `public_html`, not inside it. Placing them outside the web root is the recommended security posture for 2.7.0.
 
-Write email and enter a password. If you are not required to use the phone, then let the system generates a password for you. So you get a strong password!
+   ```
+   /home/your-user/
+   ├── public_html/
+   ├── xoops_data/     ← upload here
+   └── xoops_lib/      ← upload here
+   ```
 
-Exit to click on "Create"
+   ![](.gitbook/assets/img_66.jpg)
+   ![](.gitbook/assets/img_67.jpg)
 
-Scroll down to the administration page and select "MySQL databases"
+2. Upload the remaining contents of the distribution `htdocs/` directory into `public_html/`.
 
-![](.gitbook/assets/img_60.jpg)
+   ![](.gitbook/assets/img_68.jpg)
 
-Create a user with an optional name and let the system generates a password for you. You must virtually never use this password, so why use one that is easy to crack?
+> **If your host does not allow directories outside the document root**
+>
+> Upload `xoops_data/` and `xoops_lib/` **inside** `public_html/` and **rename them to non-obvious names** (for example `xdata_8f3k2/` and `xlib_7h2m1/`). You will enter the renamed paths into the installer when it asks for the XOOPS Data Path and XOOPS Library Path.
 
-![](.gitbook/assets/img_61.jpg)
+## 4. Make writable directories writable
 
-![](.gitbook/assets/img_62.jpg)
+Through the FTP client's CHMOD dialog (or SSH), make the directories listed in Chapter 2 writable by the web server. On most shared hosts, `0775` on directories and `0664` on `mainfile.php` are sufficient. `0777` is acceptable during installation if your host runs PHP under a user other than the FTP user, but tighten the permissions after the install completes.
 
-Scroll down and select "New Database"
+## 5. Launch the installer
 
-Enter a name and choose
-
-![](.gitbook/assets/img_63.jpg)
-
-Now you must give the user access to the database.
-
-Find the box "Add User to database" and select a user and database. Click
-
-![](.gitbook/assets/img_64.jpg)
-
-Put notch in the All Privileges and click
-
-![](.gitbook/assets/img_65.jpg)
-
-**Upload** 
-
-So we need to have uploaded Xoops. We start with upload folders xoops\_data and xoops\_lib. These two folders uploaded next to the folder public\_html
-
-![](.gitbook/assets/img_66.jpg)
-
-When they are uploaded would like to look like this
-
-![](.gitbook/assets/img_67.jpg)
-
-Then upload the remaining folders and files to the folder public\_html
-
-![](.gitbook/assets/img_68.jpg)
-
-Now you are ready to install XOOPS and proceed with the XOOPS Installation Wizard.
-
+Point your browser at the public URL of the site. If all files are in place, the XOOPS Installation Wizard starts and you can follow the rest of this guide from [Chapter 2](chapter-2-introduction.md) onwards.

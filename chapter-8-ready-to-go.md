@@ -1,76 +1,115 @@
 # Chapter 8: Ready to go!
 
-If everything has gone as planned, screen 14/14 will look like Figure 21.
+If everything has gone as planned, the final installer screen looks like this:
 
 ![](.gitbook/assets/img_28.jpg)
 
-Figure 21: Final Installation screen
+Figure 21: Final installation screen
 
-The installation is complete. For security purposes XOOPS set the “mainfile.php” and the “secure.php” files as ReadOnly, and renamed the “Install” folder to a unique name. You should delete that folder. The \[Next\] button will close the Installation Wizard and open the homepage of the new site \(Figure 22\).
+## Install directory cleanup
+
+For security, XOOPS removes access to the installer at the end of the process. In 2.7.0 this is done automatically:
+
+1. The installer writes an **external cleanup script** (for example `install_cleanup_abcd1234.php`) into the web root. The script name contains a unique suffix so it cannot be predicted.
+2. When the final page loads, JavaScript posts to that cleanup script via AJAX.
+3. The cleanup script renames the `install/` directory to `install_remove_<unique-suffix>` and then deletes itself.
+4. If the external script cannot be created, the installer falls back to the older `cleanup.php` mechanism.
+
+When the cleanup finishes, `mainfile.php` and `secure.php` are also set to read-only (`0444` on Linux/macOS) and the installer directory can no longer be reached through the browser.
+
+**After the installer completes, delete the renamed `install_remove_…` folder from your server.** Keeping a disabled but present installer directory is a minor but avoidable risk.
+
+Click **[Next]** to close the wizard and open the home page of your new site:
 
 ![](.gitbook/assets/img_29.jpg)
 
-Figure 22: XOOPS First Page
+Figure 22: XOOPS home page
 
-Now you can login using the User Name and Password created during step 9/14 of the installation. If the password is accepted, this Welcome message will be displayed with whatever username was selected replacing “admin” In few seconds the website member area home page will be displayed as in Figure 23.
+## First login
+
+Log in using the webmaster account you created during the wizard. Once the password is accepted, the User Menu appears and the home page switches into logged-in mode.
 
 ![](.gitbook/assets/img_30.jpg)
 
-Figure 23: Your brand new Website after logging in
+Figure 23: The site after logging in as the administrator
 
-Note that the User Menu has appeared. To manage the Website, you will use the Administration area, that you can access via the Administration Menu link.
+Open the **Administration** link to enter the Control Panel:
 
 ![](.gitbook/assets/img_31.jpg)
 
-Figure 24: Control Panel Home
+Figure 24: Control Panel home
 
-When the Administration area is accessed for the first time, tow or three warnings will be present. On a local installation, these warnings are not of concern as they are only for security purposes on servers.
+The first time you enter the Control Panel, the admin theme runs a series of warnings if anything in your environment still needs attention.
 
-1. The file mainfile.php located in the site’s root folder should be changed to “read-only”. On Linux set the property to 444. The same is for secure.php file located in /xoops\_data/data
-2. The other two relate to moving two directories: xoops\_lib and xoops\_data out of the Document Root.
+## Post-install warnings
 
-> **Warning** 
+On a production install, the admin area typically displays two or three warnings:
+
+1. **`mainfile.php` should be set to read-only** (`0444` on Linux/macOS). The installer already attempts this, but some hosts revert the permissions. The same applies to `xoops_data/data/secure.php`.
+2. **`xoops_lib/` and `xoops_data/` should be moved outside the document root.** These are the directories referenced by `XOOPS_PATH` (alias `XOOPS_TRUST_PATH`) and `XOOPS_VAR_PATH`.
+
+> **Warning**
 >
-> "xoops\_lib" and "xoops\_data" are directories, which are locations for "XOOPS\_PATH" and "XOOPS\_VAR\_PATH" respectively, and they should be located outside of the "Document Root"
+> Keep `xoops_lib/` and `xoops_data/` **outside** the document root whenever possible. If your host does not allow that, at least rename them to non-obvious names.
 
-The Document Root is a directory on you host's servers, below the “Server Root”, and which is designated for holding web pages. That’s where XOOPS should be in. However, every host is different and they might use different name for the Document Root. Some of the most common names are:
+The document root on a shared host can be any of:
 
-* htdocs
-* httpdocs
-* html
-* public\_html
-* web
-* empty — no value \(such as GoDaddy-hosted sites\)
+- `htdocs`
+- `httpdocs`
+- `html`
+- `public_html`
+- `web`
+- no explicit name at all (some control panels)
 
-In our tutorial, let’s assume that the name of Document Root is “**www**”. Access the root folder of the site with your FTP software and find the directories xoops\_data and xoops\_lib. If possible, move these two directories up one level to the same level as the root folder and re-name them to obscure names. If re-locating the folders is not possible due to restrictions by the host, re-name both folders and note the new names. This change is for site security \(see **Appendix 4**\). The re-location and re-naming of the xoops\_lib and xoops\_data will ideally result in a structure like:
+Imagine the document root is named `www`. Use FTP or SSH to move `xoops_lib/` and `xoops_data/` up one level, renaming them to something non-obvious at the same time:
 
 ![](.gitbook/assets/img_33.jpg)
 
-> **Caution**  In some cases, your Host doesn’t allow to move any directories outside the Document Root. In such a case, we recommend change the Host. If this is not possible, you still should rename the the xoops\_lib and xoops\_data to a different name \(see below\).
+> **Caution**
+>
+> If your host does not permit directories outside the document root, consider switching hosts. If that is not an option, at least rename both directories.
 
 ![](.gitbook/assets/img_35.jpg)
 
-> **Info** 
+> **Info**
 >
-> If you would like to hide the above warnings, you can do it by going to /xoops\_data/configs/xoopsconfig.php and setting the value to “0” in: "admin\_warnings\_enable" =&gt; 0,
+> To silence these admin warnings, set `"admin_warnings_enable" => 0` in `xoops_data/configs/xoopsconfig.php`.
 
-If access at the same level as public\_html is not possible, the structure will be similar to:
+If you cannot move the directories up one level, an acceptable layout is:
 
 ![](.gitbook/assets/img_37.jpg)
 
-Once done, you have to update the secure.php located in /xoops\_data/data/ to point to the correct physical paths for the directories:
+## Updating path constants after moving the directories
 
-> **Code**
->
-> // Physical path to the XOOPS documents \(served\) directory WITHOUT trailing slash define\( 'XOOPS\_ROOT\_PATH', '/root/www' \);
->
-> // Physical path to the XOOPS library directory WITHOUT trailing slash define\( 'XOOPS\_PATH', '/root/www /zubra\_mylib' \);
->
-> // Physical path to the XOOPS datafiles \(writable\) directory WITHOUT trailing slash define\( 'XOOPS\_VAR\_PATH', '/root/www /zubra\_mydata' \);
->
-> // Alias of XOOPS\_PATH, for compatibility, temporary solution define\("XOOPS\_TRUST\_PATH", XOOPS\_PATH\);
+After moving `xoops_lib/` and `xoops_data/`, update the path constants in **`mainfile.php`** (not `secure.php`) so they point to the new locations. The relevant constants in `mainfile.php` are:
 
-This concludes the Installation Guide. Did everything go well? Did you learn also some things additional about XOOPS? Have you any comments you wish to share with us? Please let us know your comments about this guide, about what we can do to improve it, about what we need to add to make it more useful and complete, and whatever you want to tell us \(unless you're too fond of swearing: there are kids around here\).
+```php
+// Physical path to the XOOPS documents (served) directory WITHOUT trailing slash
+define('XOOPS_ROOT_PATH', '/root/www');
 
-Please address all comments to [documentation@xoops.org](mailto:documentation@xoops.org). They will be well received. Honestly.
+// Physical path to the XOOPS library directory WITHOUT trailing slash
+define('XOOPS_PATH', '/root/zubra_mylib');
 
+// Physical path to the XOOPS datafiles (writable) directory WITHOUT trailing slash
+define('XOOPS_VAR_PATH', '/root/zubra_mydata');
+
+// Alias of XOOPS_PATH, kept for backwards compatibility
+define('XOOPS_TRUST_PATH', XOOPS_PATH);
+```
+
+`secure.php` holds the database credentials and does **not** redefine these path constants. If you inherited documentation from XOOPS 2.5.x that told you to edit path constants in `secure.php`, ignore it on 2.7.0.
+
+## Production settings
+
+`mainfile.dist.php` ships with production-friendly defaults that `mainfile.php` should keep on a live site:
+
+```php
+define('XOOPS_DB_LEGACY_LOG', false); // disable legacy SQL usage logging
+define('XOOPS_DEBUG',         false); // disable debug notices
+```
+
+Only set either to `true` in a development environment when you are actively investigating legacy DB usage or deprecated notices.
+
+## That's it
+
+The installation is complete. Visit [https://xoops.org](https://xoops.org) to find additional modules, themes, and documentation. Comments about this guide can be sent to [documentation@xoops.org](mailto:documentation@xoops.org).
