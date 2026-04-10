@@ -1,90 +1,134 @@
 # Chapter 7: Administration Settings
 
-After the tables have been created, the Administrator account settings are entered.
+After the tables have been created, the wizard collects the administrator account settings.
 
 ![](.gitbook/assets/img_19.jpg)
 
-Figure 13: This is the form where you create your site's webmaster.
+Figure 13: Webmaster account form
 
-In the field called \[Admin Login\] the login name for the site SuperUser or Administrator should be entered. A common choice is, of course, webmaster, but any name can be used.
+## Admin account
 
-The Admin e-mail field should be filled with the address where mail sent to the site administrator or webmaster should be delivered. The final step is to enter and confirm a password for the webmaster.
+- **Admin Login** — the site's SuperUser / administrator login name. `webmaster` is a common choice, but any valid name works.
+- **Admin e-mail** — the address where mail sent to the administrator should be delivered. The wizard now runs this value through PHP's `FILTER_VALIDATE_EMAIL`, so invalid addresses are rejected and you will be asked to correct them before continuing.
+- **Password** and **Confirm Password** — must match.
 
-The Password Generator will create a very strong password and its use is highly recommended. To use it, click on “Generate”, and then on “Copy” to copy it automatically to the appropriate password field.
+### Password strength meter
 
-It is important that the password be saved for future reference. “KeyPass” is a good tool that can be used to store it in a database \(see Appendix 4\)
+XOOPS 2.7.0 includes a real-time password strength meter (powered by `zxcvbn`). As you type, the meter shows one of: **Very Weak**, **Weak**, **Better**, **Medium**, or **Strong**, with a colored indicator that updates on every keystroke. Choose a password rated **Medium** or better.
+
+### Password generator
+
+Next to the password field is a password generator:
+
+1. Click **Generate** to produce a new 16-character strong password.
+2. Click **Copy** to copy it into both password fields.
 
 ![](.gitbook/assets/img_20.jpg)
 
-Figure 14: Copying the generated password to Administrator fields
+Figure 14: Password generator + strength meter
 
-The Installation Wizard will confirm that the passwords match. Clicking \[Next\] will move the process forward to step 10/14 \(Figure 15\).
+It is important that the password be saved somewhere safe (for example in a password manager such as KeePass — see Appendix 4). There is no other way to recover the webmaster credentials later.
+
+Click **[Next]** to save the admin account and continue.
 
 ![](.gitbook/assets/img_21.jpg)
 
-Figure 15: Saving settings to the database tables and creating System Key
+Figure 15: Saving settings to the database tables
 
-At this point of the installation, XOOPS created a unique System Key for your installation.
+## Installation-time license data
 
-> **Note**
->
-> XOOPS 2.5.x includes a License System Key that is stored in /include/license.php This file has to be writeable by the Installation Wizard, the same way as “mainfile.php”. On most system the Installer is able to write files, but if it isn't, you will have to chmod /include/license.php to 777. Just like the mainfile.php, you have to be careful with this file in later upgrades. The file is chmod'd back to 444 when it is finalized. Do not write over this file, you can generate it again if you do by running the upgrade.
+XOOPS 2.7.0 still generates a unique installation identifier, but the file that stores it has moved.
 
-Also, 19 of 32 tables have received data. The following list provides an outline of the data added to the tables:
+- **Old location (2.5.x):** `/include/license.php` — had to be writable during installation.
+- **New location (2.7.0):** `xoops_data/data/license.php` — lives in the writable `xoops_data/` tree alongside `secure.php`.
 
-| xef9\_banner | received 3 entries. These are located in the folder images/banners and are xef9\_banner.gif, xef9\_banner\_2.gif and banner.swf. Flash files can also be included as banners. |
-| --- | --- |
-| xef9\_bannerclient | received 1 entry. This particular client is no other than XOOPS itself. The three banners inserted into the database belong to XOOPS.  The new site will go live with three XOOPS banners, which can be changed or removed. |
-| xef9\_block\_module\_link | received 12 entries. This corresponds with the 12 entries also inserted into xef9\_newblocks. This means the System module has 12 blocks defined: “User Menu”, “Login”, “Search”, “Waiting Contents”, “Main Menu”, “Site Info”, “Who's Online”, “Top Posters”, “New Members”, “Recent Comments”, “Notification Options” and “Themes”. These are all blocks that can be managed within the Template Manager. |
-| xef9\_config | received 130 entries. To view what was written to this table, either open MySQL Admin and  look at the table, or, look at the file “install/makedata.php” where lines 154-292 show the whole list of entries. Note that number of entries listed in makedata.php does not match the number of inserted entries.  This is normal as through the evolution of XOOPS, entries like 25 and 26 were dropped. |
-| xef9\_configcategory | received 7 entries. These categories are “General Settings”, “User Info Settings”, “Meta Tags and Footer”, “Word Censoring Options”, “Search Options” and “Mail Setup”. These options are revealed in the site's preferences in the admin section. |
-| xef9\_configoption | received 47 entries.  Information on these entries can be found in lines 44-82 of the file install/ sql/mysql.data.sql. They are default values for a lot of general options of the new site. |
-| xef9\_groups | received 3 entries, corresponding to the three default user groups: webmasters, registered users and anonymous users. |
-| xef9\_grouppermission | received 57 entries, that have to do with permissions for groups for the module installed \(System\) and its 12 blocks. The 57 entries include: 1 to let webmasters manage the System module, 3 to let the three groups read the System module, and 17 for the System Admin. The other 36 define, for each group and each block of the System module, a permission level \(12 x 3 = 36 entries\). |
-| xef9\_groups\_users\_link | received 2 entries. This means the one user created in step 9/14 \(Figure 16\)  belongs to both the webmaster and registered users groups. |
-| xef9\_imgset | received 1 entry. This defines the default image set. |
-| xef9\_imgset\_tplset\_link | received 1 entry. This links the default image set to the default template set. |
-| xef9\_modules | received 1 entry. This is the entry associated to the System module, the only one installed by XOOPS. |
-| xef9\_newblocks | received 12 entries.  These entries are for the 12 blocks associated to the System module. |
-| xef9\_ranks | received 7 entries.  They are "Just popping in", "Not too shy to talk", "Quite a regular", "Just can't stay away", "Home away from home", "Moderator" and "Webmaster". These are the default values of user ranking, which can be changed in the administration area. |
-| xef9\_session | received 1 entry. |
-| xef9\_smiles | received 17 entries. These are the 17 smilies first available when using the XOOPS editor. |
-| xef9\_tplset | received 1 entry, the corresponding to the default template set. |
-| xef9\_tplfile | received 50 entries. These are the templates associated with the default template set and used by the System module. |
-| xef9\_tplsource | also received 50 entries. These are the templates sources stored in the database and used by the System module. |
-| xef9\_users | received 1 entry. This corresponds to the single user created during step 9/14 \(Figure 14\) of the installation. |
+`htdocs/include/license.php` still exists, but it is now a deprecated wrapper that loads the real file from `XOOPS_VAR_PATH`. You no longer need to `chmod` `/include/license.php` during installation.
 
-The next step is to configure the website, including the site name, Meta Tags, Meta Description, Author, and Copyright information.
+## Initial data inserted
+
+At this stage the wizard populates the System module tables with default data:
+
+| Table                | Default data                                                                                                                              |
+| -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| `banner`             | 3 default XOOPS banners from `images/banners/`.                                                                                           |
+| `bannerclient`       | 1 entry — XOOPS itself as the client for the three default banners.                                                                       |
+| `block_module_link`  | 12 entries — one per default System block.                                                                                                |
+| `config`             | General configuration values (site name, meta, mail, search, etc.).                                                                       |
+| `configcategory`     | Configuration categories surfaced in the System preferences screen.                                                                       |
+| `configoption`       | Default option values.                                                                                                                    |
+| `groups`             | 3 entries — Webmasters, Registered Users, Anonymous Users.                                                                                |
+| `group_permission`   | Default per-group read/admin permissions for the System module and its blocks.                                                            |
+| `groups_users_link`  | Links the admin user into the Webmasters and Registered Users groups.                                                                     |
+| `imgset`             | 1 entry — the default image set.                                                                                                          |
+| `imgset_tplset_link` | Links the default image set to the default template set.                                                                                  |
+| `modules`            | 1 entry — the System module.                                                                                                              |
+| `newblocks`          | 12 entries — default System blocks (User Menu, Login, Search, Waiting Contents, Main Menu, Site Info, Who's Online, etc.).                |
+| `ranks`              | Default user ranks (Just popping in, Not too shy to talk, Quite a regular, Just can't stay away, Home away from home, Moderator, Webmaster). |
+| `session`            | Initial session row.                                                                                                                      |
+| `smiles`             | 17 default smilies used by the XOOPS editors.                                                                                             |
+| `tplset`             | 1 entry — the default template set.                                                                                                       |
+| `tplfile` / `tplsource` | 50 entries each — the System module templates.                                                                                        |
+| `users`              | 1 entry — the administrator account you just created.                                                                                    |
+
+## Site configuration
+
+After the admin account is stored, the wizard asks you to configure basic site metadata — site name, slogan, Meta Keywords, Meta Description, Author, Copyright, registration policy, close-site mode, and debug mode.
 
 ![](.gitbook/assets/img_22.jpg)
 
 Figure 16: Site configuration data entry
 
-The information entered in step 11/14 will have an impact on the site’s SEO score. Information can be found here: [http://en.wikipedia.org/wiki/Meta\_element](http://en.wikipedia.org/wiki/Meta_element). It is not necessary to make all decisions at this step as the information can be edited later via the site administration area.
+This information directly affects SEO and is all editable later in the System Preferences screen. See [Meta Elements on Wikipedia](https://en.wikipedia.org/wiki/Meta_element) for background.
+
+## Theme selection
+
+Next, the wizard lets you choose the default front-end theme.
 
 ![](.gitbook/assets/img_23.jpg)
 
-Figure 17: Theme Selection screen
+Figure 17: Theme selection screen
 
-The next step is to select the website theme. The Installation Wizard provides three themes that can be changed later. Hundreds themes are available for XOOPS – see the XOOPS Theme Gallery: [http://www.xoops.org/modules/extgallery/](http://www.xoops.org/modules/extgallery/) . We select the Zetagenesis theme. The next step is to install the modules provided with XOOPS:
+The themes shipped with XOOPS 2.7.0 are:
+
+- `default`
+- `xbootstrap`
+- `xbootstrap5`
+- `xswatch4` — **default theme** selected by the installer data
+- `xswatch5`
+- `xtailwind`
+- `xtailwind2`
+
+The old 2.5.x Zetagenesis and "flavour" themes are no longer part of the distribution. `xswatch4` is what you get if you accept the default. Hundreds of additional themes are available from the XOOPS community.
+
+## Module installation
+
+The wizard then offers the remaining bundled modules for installation. The **`system`** module has already been installed by the previous step (it provides the core admin functionality), so it does not appear in the picker — the picker only lists modules that are not yet installed.
 
 ![](.gitbook/assets/img_24.jpg)
 
 Figure 18: Module selection screen
 
-Installation of the three modules included with the core package is recommended. They provide both useful functionality and security.
+XOOPS 2.7.0 ships with five modules in total: `system` (already installed), plus the four selectable in this step:
+
+- **`debugbar`** — developer debug bar. **New in 2.7.0.** Useful while developing or diagnosing issues; can be left uninstalled on production.
+- **`pm`** — private messaging.
+- **`profile`** — extended user profiles.
+- **`protector`** — site protection / firewall (strongly recommended).
+
+> **Note**
+>
+> In 2.7.0 the installer no longer pre-checks bundled modules. Every selectable module is presented as an available choice, but you pick which ones to install. Installing all of them at once is still the fastest way to get started.
 
 ![](.gitbook/assets/img_25.jpg)
 
-Figure 19: All modules are selected to install
+Figure 19: Bundled modules available for installation
 
-> **Tip** Experienced XOOPS users may choose to add additional modules. Additional modules can be added to the /modules directory before activating the Installation Wizard. The Installation Wizard will install all modules at one time and can save considerable time vs. installing each of them one at a time later on.
+> **Tip** — Experienced users can drop extra modules into `modules/` before launching the wizard and install them all in one pass. It is much faster than installing them individually afterwards.
 
-Once the modules are selected, click on \[Next\] to install them. Each module will provide feedback to confirm proper installation \(Figure 20\).
+After selecting the modules you want, click **[Next]** to install them. Each module reports its installation progress:
 
 ![](.gitbook/assets/img_27.jpg)
 
-Figure 20: Module Installation feedback
+Figure 20: Module installation feedback
 
-Scroll down the list to confirm the modules installed successfully and click on \[Next\].
-
+Scroll through the list to confirm each module installed successfully, then click **[Next]** to finish.

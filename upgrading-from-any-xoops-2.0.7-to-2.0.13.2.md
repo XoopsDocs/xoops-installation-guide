@@ -1,6 +1,10 @@
-# Upgrading from any XOOPS \(2.0.7 to 2.0.13.2\)
+# Upgrading from any XOOPS (2.0.7 to 2.0.13.2)
 
-\(using the full package\)
+> **Historical reference**
+>
+> This page describes a legacy upgrade path that pre-dates XOOPS 2.7.0. It is preserved for users who are still on a very old version and need to step through intermediate releases. **For upgrading any 2.5.x site to XOOPS 2.7.0, see [Chapter 9](chapter-9-upgrade-existing-xoops-installation.md) instead.**
+
+(using the full package)
 
 1. Unpack the archive to your LOCAL computer \(e.g. PC\) in a temporary directory.
 2. Move the "upgrade" folder inside the "htdocs" folder on your LOCAL computer \(it's been kept separate as it's not needed for full installs\)

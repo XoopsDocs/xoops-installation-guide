@@ -1,38 +1,60 @@
 # Chapter 4: Take the Right Path!
 
-This part of the installation should be quite easy, as you don't have to do anything. . If you did things right until now, Figure 5 is the next screen. The green checkmarks indicate the physical path and the virtual path were written correctly, enabling the Installation Wizard to create the additional paths.
-
-  
-Figure 4: Server configuration check.
+In this step the Installation Wizard collects the filesystem paths and URLs that will be written to `mainfile.php`. If the files were uploaded correctly, most of the fields are pre-filled for you.
 
 ![](.gitbook/assets/img_11.jpg)
 
-  
-Figure 5: The screen with all paths correctly written
+Figure 5: Paths settings page
+
+## Fields
+
+The 2.7.0 installer exposes the following fields:
+
+| Field                  | Description                                                                                              |
+| ---------------------- | -------------------------------------------------------------------------------------------------------- |
+| **XOOPS Root Path**    | Absolute filesystem path to the `htdocs/` contents (the web-served directory). No trailing slash.        |
+| **XOOPS Data Path**    | Absolute filesystem path to `xoops_data/` (writable runtime data). Should be moved outside the web root. |
+| **XOOPS Library Path** | Absolute filesystem path to `xoops_lib/` (code libraries and Composer `vendor/`). Also best moved out.   |
+| **XOOPS URL**          | Virtual URL to your main XOOPS directory, without a trailing slash.                                      |
+| **Cookie Domain**      | Domain used when creating cookies. May be blank, the full host, or the registered domain.                |
+
+The protocol (`http://` / `https://`) is detected automatically at runtime, including reverse-proxy scenarios (`X-Forwarded-Proto`, `X-Forwarded-Ssl`, etc.), so you no longer need to hard-code the scheme in the URL field.
 
 ![](.gitbook/assets/img_12.jpg)
 
-If are not sure about any fields during the installation, you can click on the Help button \(see yellow arrow above\), and XOOPS will provide with some additional instructions \(see below\)
-
-For the time being, please accept the paths for Datafiles and Library directories. We will change them later.
-
-  
-Figure 4: Server configuration check.
+If you are not sure about a field, click the **Help** button next to it (yellow arrow) and the wizard will display in-line instructions:
 
 ![](.gitbook/assets/img_13.jpg)
 
-  
-Figure 6: By clicking on the Help icon, you will get detailed explanations If you make an error in the physical path, the Installation Wizard will display an error:
+Figure 6: Inline help for path fields
+
+For the initial install, accept the default locations for the Data and Library directories. Chapter 8 explains how to relocate them safely after installation.
+
+## Composer autoloader check (Library Path)
+
+XOOPS 2.7.0 ships its third-party dependencies through Composer. The wizard now validates that the **XOOPS Library Path** points to a directory that contains a working autoloader at:
+
+```
+<library path>/vendor/autoload.php
+```
+
+If the autoloader is missing, the wizard will flag the library path as invalid and refuse to move on. This typically means either:
+
+- the `xoops_lib/` directory was not fully uploaded, or
+- the path you entered is wrong.
+
+Re-upload the `xoops_lib/` directory from the distribution in full (it includes a pre-built `vendor/` folder — you do not need to run `composer install` yourself) and enter the correct path.
+
+## Path validation errors
+
+If you make an error in a path, the wizard displays a clear error message:
 
 ![](.gitbook/assets/img_14.jpg)
 
-  
-Figure 4: Server configuration check.
-
 ![](.gitbook/assets/img_15.jpg)
 
-  
-Figure 7: The screen with an invalid URL in the physical path field. Once all paths are correct, click \[Next\].
+Figure 7: Invalid path field
+
+Once every path shows a green check, click **[Next]**.
 
 ![](.gitbook/assets/img_16.jpg)
-

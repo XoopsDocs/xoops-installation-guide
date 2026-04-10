@@ -1,57 +1,86 @@
 # Chapter 6: Final System Configuration
 
-With all of the information added, the Installation Wizard is ready to write all the information to the mainfile.php and the secure.php file. If the information provided about the database was correct, the result should be similar to Figure 11.
+With the paths and database information collected, the Installation Wizard is ready to write the configuration files and create the database tables.
 
 ![](.gitbook/assets/img_17.jpg)
 
-Figure 11: You have another chance to take a look at what you entered If all data is correct, push the \[Next\] button and the Installation Wizard will attempt to connect to the database server to confirm the MySQL database is active and running and then will try to connect to the database specified.
+Figure 11: Review the values you entered before the wizard writes them
 
-If the MySQL server is setup correctly, the Installation Wizard will try to access the database, in this case the one called “xoops250final”. If it accessed the database successfully, the required tables for XOOPS.
+## Configuration files written
+
+When you confirm this screen, the wizard writes or copies the following files. The two files in the first group are **always (re)generated** with the values you entered in the wizard. The files in the second group, under `xoops_data/configs/`, are only copied **if they do not already exist**.
+
+**Always regenerated**
+
+- **`mainfile.php`** (from `mainfile.dist.php`) — main XOOPS configuration file; defines `XOOPS_ROOT_PATH`, `XOOPS_PATH`, `XOOPS_VAR_PATH`, `XOOPS_URL`, and cookie-domain constants. If a `mainfile.php` already exists from a previous install, it will be overwritten with the values from this wizard run.
+- **`xoops_data/data/secure.php`** (from `secure.dist.php`) — holds the database credentials. Keeping this file inside the (writable) data directory lets you move it outside the web root without editing it. Also always regenerated from the wizard input.
+
+**Copied only if missing**
+
+- **`xoops_data/configs/xoopsconfig.php`** (from `xoopsconfig.dist.php`) — runtime configuration flags consumed by the core.
+- **`xoops_data/configs/captcha/*.php`** — working copies of the CAPTCHA config files (`config.php`, `config.image.php`, `config.recaptcha2.php`, `config.text.php`).
+- **`xoops_data/configs/textsanitizer/*.php`** — working copies of the text-sanitizer config files (censor, image, mms, rtsp, syntaxhighlight, textfilter, wiki, wmp).
+
+> **Important**
+>
+> The "copied only if missing" behavior of the `xoops_data/configs/` files matters during upgrades and re-runs of the installer: any local customization you have made to `xoopsconfig.php`, the CAPTCHA configs, or the text-sanitizer configs is preserved automatically. If you instead want the shipped defaults restored, delete the existing file first and re-run the installer (or copy the corresponding `.dist.php` by hand).
+>
+> Be aware that this preservation does **not** apply to `mainfile.php` and `xoops_data/data/secure.php` — those two are always rewritten from the values you enter in the wizard. If you have hand-edited either of them, back up your changes before re-running the installer.
+
+The generated `mainfile.php` also includes improved HTTPS detection. Protocol selection (`http://` vs `https://`) is handled at runtime and honors reverse-proxy headers:
+
+- `$_SERVER['HTTPS']` (`on`)
+- `$_SERVER['SERVER_PORT'] === 443`
+- `HTTP_X_FORWARDED_PROTO` / `HTTP_X_FORWARDED_SSL`
+- `HTTP_X_FORWARDED_PORT`
+- `REDIRECT_HTTPS`
+
+So a XOOPS 2.7.0 site behind a TLS-terminating load balancer or Cloudflare will correctly issue `https://` URLs even when PHP itself sees only plain HTTP.
+
+## Database tables created
+
+If the configuration files are written successfully, the wizard connects to the database and creates the XOOPS tables.
 
 ![](.gitbook/assets/img_18.jpg)
 
 Figure 12: Database table creation list
 
-Screen 8/14 \(Figure 12\) presents all of the database tables that support the System Module of a new XOOPS site.
+A new XOOPS 2.7.0 site creates **33 tables** in the System module. Each is created empty and ready to receive data.
 
-A new XOOPS site creates 32 tables. Following is a list of the tables and a brief description of their function:
+| Table                    | Description                                                                                        |
+| ------------------------ | -------------------------------------------------------------------------------------------------- |
+| `avatar`                 | User avatar identity, path, and name.                                                              |
+| `avatar_user_link`       | Ties an avatar to a user.                                                                          |
+| `banner`                 | Banner information.                                                                                |
+| `bannerclient`           | Banner customers.                                                                                  |
+| `bannerfinish`           | Expired banners with their click counts.                                                           |
+| `block_module_link`      | Ties blocks to the modules they belong to.                                                         |
+| `cache_model`            | Cache model values.                                                                                |
+| `config`                 | General XOOPS configuration variables.                                                             |
+| `configcategory`         | Configuration categories.                                                                          |
+| `configoption`           | Configuration options.                                                                             |
+| `group_permission`       | Permissions granted per group.                                                                     |
+| `groups`                 | User group identities.                                                                             |
+| `groups_users_link`      | Ties users to groups.                                                                              |
+| `image`                  | Image metadata.                                                                                    |
+| `imagebody`              | Image binary storage, for database-stored images.                                                  |
+| `imagecategory`          | Image categories used by the Image Manager.                                                        |
+| `imgset`                 | Image set identity.                                                                                |
+| `imgset_tplset_link`     | Ties image sets to template sets.                                                                  |
+| `imgsetimg`              | Legacy, unused.                                                                                    |
+| `modules`                | Installed module information.                                                                     |
+| `newblocks`              | Block definitions.                                                                                |
+| `online`                 | Online users.                                                                                      |
+| `priv_msgs`              | Private messages.                                                                                  |
+| `ranks`                  | User ranks defined in the admin area.                                                              |
+| `session`                | Active sessions.                                                                                   |
+| `smiles`                 | Smilie definitions.                                                                                |
+| `tokens`                 | **New in 2.7.0.** CSRF / form-token storage used by the security layer.                           |
+| `tplfile`                | Metadata for template-set files.                                                                   |
+| `tplset`                 | Template-set registry.                                                                             |
+| `tplsource`              | Source data for template-set files stored in the database.                                        |
+| `users`                  | User accounts.                                                                                     |
+| `xoopscomments`          | Comments.                                                                                          |
+| `xoopsnotifications`     | Notifications.                                                                                     |
 
-| Table | Description |
-| --- | --- |
-| xef9\_avatar | Holds the identity, path and name of user avatars. |
-| xef9\_avatar\_user\_link | Ties an avatar's id with a user's id, so each user “knows” its avatar. |
-| xef9\_banner | Holds all the information about a specific banner. |
-| xef9\_bannerclient | Holds all the information about a banner customer. |
-| xef9\_bannerfinish | Holds all the information about expired banners, with their click count. |
-| xef9\_block\_module\_link link | Ties a block's id with a module's id, so each block “knows” the module to which it belongs. |
-| xef9\_cache\_model | holds value for cache model. |
-| xef9\_config | Holds XOOPS general configuration variables. |
-| xef9\_configcategory | Holds the configuration categories. |
-| xef9\_configoption | Holds configuration options. |
-| xef9\_group\_permission | Holds the details of permissions granted to each group of users. |
-| xef9\_groups | Holds the identity of users' groups. |
-| xef9\_groups\_users\_link | Ties a user's id with a group's id, so each group "knows" its users, or each user "knows" to which group it belongs. |
-| xef9\_image | Holds all the information about an image stored in the system. |
-| xef9\_imagebody | Holds an image, in case you decide to write images in the database. |
-| xef9\_imagecategory | Holds the image categories you define in the Image Manager. |
-| xef9\_imgset | Holds the identity of an image set. |
-| xef9\_imgset\_tplset\_link | Ties an image set's it with a template set's id, so a template set "knows" what images belong to it. |
-| xef9\_imgsetimg | not used. |
-| xef9\_modules | Holds all the information about a module. |
-| xef9\_newblocks | Holds all the defining attributes of a block. |
-| xef9\_online | Holds the information about users online. |
-| xef9\_priv\_msgs | Holds all the information about a private message. |
-| xef9\_ranks | Holds the users ranks defined in the admin area, to qualify user's participation in the site. |
-| xef9\_session | Holds the information about a session. |
-| xef9\_smiles | Holds the information about the codes used to display smilies. |
-| xef9\_tplfile | Holds the metadata of a file that's part of a template set. |
-| xef9\_tplset | Holds the information about a template set. |
-| xef9\_tplsource | Holds the data \(the source code\) of a file that's part of a template set. |
-| xef9\_users | Holds all the information about a user. |
-| xef9\_xoopscomments | Holds all the information about a comment. |
-| xef9\_xoopsnotifications | Holds all the information about notifications. |
-
-All tables are created blank, ready to be populated.
-
-The list of tables will grow with each module that is added to the site. As noted earlier, the tables listed above are for the System Module only.
-
+The list of tables grows each time you install a module. The tables above are the System module only.

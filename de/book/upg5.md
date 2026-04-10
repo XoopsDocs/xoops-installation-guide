@@ -1,9 +1,9 @@
-## Upgrading XoopsEditor package:
+# Aktualisieren des XoopsEditor-Pakets — Archiviert
 
-In the XOOPS package, there are eight editors included: dhtmltextarea and textarea for plain text, fckeditor, tinymce, koivi, wymeditor, Xinha, and Spaw2 for WYSIWYG HTML.
-
-Since there are some directory structure changes in both fckeditor and tinymce editors, you are recommended to remove existing editors before uploading the new editors.
-
-And if you are using fckeditor for modules, please modify module specific configs following the files in /fckeditor/modules/, especially if you use "article" module.
-
-**To increase Security of your XOOPS Installation: please make sure to read Appendix 5 **
+> **⚠ Warnung — archivierter Inhalt**
+>
+> Diese Seite beschreibt einen historischen Upgrade-Pfad für das XoopsEditor-Paket aus der Vor-2.7.0-Zeit. Sie wird **nicht** für XOOPS 2.7.0 gepflegt. Die in XOOPS 2.7.0 ausgelieferten Editoren unterscheiden sich vom alten Satz und werden über den regulären 2.7.0-Upgrade-Pfad aktualisiert.
+>
+> **Für ein Upgrade auf XOOPS 2.7.0 verwenden Sie [Kapitel 9](../../chapter-9-upgrade-existing-xoops-installation.md).**
+>
+> Der ursprüngliche Inhalt dieser Datei steht weiterhin in der Git-Historie zur Verfügung.

@@ -1,29 +1,40 @@
 # Chapter 5: Database Connections
 
-The next step is to start configuring the soon-to-exist XOOPS site. With the paths and folder permissions correct, it's time to give the wizard information about the database that we’ll be using. Screen 5/14 should look like Figure 8:
+With the paths and folder permissions correct, the next step is to configure the database connection.
 
 ![](.gitbook/assets/img_14.jpg)
 
 Figure 8: Database connection details
 
-The first selector is for the moment a reminder that XOOPS looks into the future. Currently, only MySQL databases can be used. No choice is required.
+## Database type
 
-If the mysql option is not visible, an error has occurred and the installation process should be started from the beginning.
+XOOPS 2.7.0 supports **MySQL** only (via the MySQLi extension). The database type selector exists to keep the installer forward-compatible, but `mysql` is the only choice. If the option is missing entirely, an error has occurred and the installation should be restarted.
 
-The next field is the Server host name, the host of the MySQL database server. The default entry is localhost. It does not likely need to be changed. The database username and password are entered next. For a local installation, the username “root” will likely work with the appropriate password.
+## Connection fields
 
-For an installation in a remote environment, the database username and password should have been set up in advance. If they are not available, pause the installation and set up the username and password on the remote server. The installation cannot continue without this information.
-
-Next comes a Yes/No question about using persistent connections in the MySQL database. The default option is No, and it should be left as such except by advanced users. For more information on this subject, refer to: "MySQL Newsletter Using persistent connections with MySQL".
+- **Server host name** — the host of the MySQL server. Defaults to `localhost`, which is correct for most local installs and many shared hosts.
+- **Database username** / **Database password** — credentials for the database. On a local install the default root account usually works. On a remote host, create the user ahead of time through your control panel.
+- **Persistent connections** — defaults to **No**. Leave it off unless you know you need persistent connections.
 
 ![](.gitbook/assets/img_15.jpg)
 
-Figure 9: Error displayed if a connection to the MySQL server is not made  
-If there are problems with connection to the database, XOOPS will return the error in Figure 9 – make sure the settings are correct.
+Figure 9: Error displayed when the connection to the MySQL server fails
+
+If XOOPS cannot connect, double-check the host, username, and password and try again.
+
+## Database configuration
+
+Once the wizard establishes a connection, it proceeds to the database configuration screen:
 
 ![](.gitbook/assets/img_16.jpg)
 
-Figure 10: Database Configuration
+Figure 10: Database configuration
 
-In step 6/14, the connection has been established and the XOOPS database is configured. Using a name that has relevance to the site is suggested, particularly if there are several databases in use. XOOPS will prefix each name with the string contained in the next field, "Table Prefix" so a short prefix is suggested. This prefix can be changed later. The recommended option is to leave it as it is. Although the field in Figure 10 says “xef9”, the prefix added to every table is xef9\_, with an underscore at the end. The Database character set and Database collation do not need to be changed.
+Fields:
 
+- **Database name** — the name of the XOOPS database. If the database does not yet exist, the wizard will attempt to create it for you. Using a name that relates to the site is recommended, especially on servers with multiple XOOPS installs.
+- **Table Prefix** — XOOPS prefixes every table with this value followed by an underscore. Keep it short. You can accept the auto-generated value (e.g. `xef9` → tables named `xef9_users`, `xef9_config`, etc.) or use your own. Once the install is complete, this value cannot be changed without a full rebuild.
+- **Database character set** — defaults to **`utf8mb4`**. This is the recommended setting for XOOPS 2.7.0 and supports the full Unicode range (including emoji and all CJK characters).
+- **Database collation** — the list of valid collations is populated dynamically by the wizard when you change the character set. Accept the default unless you have a specific reason to pick another.
+
+`utf8mb4` is the correct choice for almost every new install. Only change it if you are migrating from an older site that used a different encoding and you want to preserve the previous behavior.

@@ -1,33 +1,9 @@
-## Chapter 4: Take the Right Path! 
+# Kapitel 4: Den richtigen Pfad wählen! — Archiviert (XOOPS 2.5.x)
 
-This part of the installation should be quite easy, as you don't have to do anything. . If you did things right until now, Figure 5 is the next screen.  The green checkmarks indicate the physical path and the virtual path were written correctly, enabling the Installation Wizard to create the additional paths.
-  
-![](../assets/img_11.jpg)  
-Figure 4: Server configuration check.
-
-![](../assets/img_12.jpg)   
-Figure 5: The screen with all paths correctly written
-
-If are not sure about any fields during the installation, you can click on the Help button (see yellow arrow above), and XOOPS will provide with some additional instructions (see below) 
-
-For the time being, please accept the paths for Datafiles and Library directories. We will change them later. 
-
- 
-![](../assets/img_13.jpg)  
-Figure 4: Server configuration check.
-
-![](../assets/img_14.jpg)  
-Figure 6: By clicking on the Help icon, you will get detailed explanations
-If you make an error in the physical path, the Installation Wizard will display an error:
-
- 
-![](../assets/img_15.jpg)  
-Figure 4: Server configuration check.
-
-![](../assets/img_16.jpg)   
-Figure 7: The screen with an invalid URL in the physical path field.
-Once all paths are correct, click [Next]. 
-
-
-
- 
+> **⚠ Warnung — archivierter Inhalt**
+>
+> Diese Seite gehörte zur älteren deutschsprachigen Fassung des XOOPS-Installationshandbuchs für XOOPS 2.5.x. Sie wird **nicht** für XOOPS 2.7.0 gepflegt und beschreibt weder das neue Cookie-Domain-Feld noch die Composer-Autoloader-Prüfung im Library-Pfad.
+>
+> **Verwenden Sie für XOOPS 2.7.0 die maßgebliche englische Fassung im Hauptverzeichnis dieses Repositories: [chapter-4-take-the-right-path.md](../../chapter-4-take-the-right-path.md).**
+>
+> Der ursprüngliche 2.5.x-Inhalt dieser Datei steht weiterhin in der Git-Historie zur Verfügung.
